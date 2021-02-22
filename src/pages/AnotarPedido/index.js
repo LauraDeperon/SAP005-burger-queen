@@ -9,12 +9,6 @@ function AnotarPedidos() {
   return (
     <div className="">
       <HeaderMain />
-      <nav>
-        <ul>
-          <li><Link to='/AnotarPedidos'>Anotar Pedidos</Link></li>
-          <li><Link to='/PedidosProntos'>Pedidos Prontos</Link></li>
-        </ul>
-      </nav>
       <CardapioCafeManha />
     </div>
   );
