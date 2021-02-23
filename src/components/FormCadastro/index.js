@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
 const FormCadastro = () => {
-  const [userInfo, setUser] = useState({ restaurant: 'Burguer Beef' });
+  const [userInfo, setUser] = useState({ restaurant: 'Burger Beef' });
   let history = useHistory();
 
   const handleSubmit = (event) => {
@@ -51,7 +51,6 @@ const FormCadastro = () => {
       </label>
 
       <section className='option-setor'>
-        <p className='setor'>Setor:</p>
         <label>
           <input type='radio' value='cozinha' name='role' className='input-radio' required onChange={(event) => setUser({ ...userInfo, 'role': event.target.value })
           } />

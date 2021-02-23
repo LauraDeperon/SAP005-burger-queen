@@ -40,7 +40,7 @@ const CardapioCafeManha = () => {
       })
   }, [])
 
-  const handleAdicionar = async(produto) => {
+  const handleAdicionar = (produto) => {
     setResumoPedido([...resumoPedido, produto])
     setPrecosProdutos([...precosProdutos, produto.price])
     
@@ -95,11 +95,9 @@ const CardapioCafeManha = () => {
       .then((response) => {
         response.json()
       })  
-      .then(data => {
-        console.log(data)
-      })
   }
 
+  console.log(bebidas)
   return (
     <div>
 
