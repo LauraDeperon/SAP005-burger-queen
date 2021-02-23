@@ -33,12 +33,6 @@ label> input{
     outline: none;
 }
 
-label> input:focus, :active{
-    border: none;
-    background-color:#ebe7e1;
-}
-
-
 th{
     font-family: 'Oswald', sans-serif;
     font-weight: 100;

@@ -37,6 +37,10 @@
     font-size: 25pt;
 }
 
+.none{
+    display: none;
+}
+
 .details{
     display: flex;
     align-items: center;
