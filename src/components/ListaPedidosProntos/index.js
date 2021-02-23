@@ -5,7 +5,7 @@ const ListaPedidosProntos = () => {
   const tokenUser = localStorage.getItem('token');
   const [PedidosProntos, setPedidosProntos] = useState([]);
 
-  useEffect(() => {
+  const listaPedidos = () => {
     fetch('https://lab-api-bq.herokuapp.com/orders', {
       method: 'GET',
       headers: {
@@ -19,57 +19,72 @@ const ListaPedidosProntos = () => {
         const pedidosEntregar = products.filter(itens => itens.status.includes('ready'));
         setPedidosProntos(pedidosEntregar)
       })
+  }
+
+  useEffect(() => {
+    listaPedidos();
   }, [])
 
-  const handleEntregar = () => {
+  const handleEntregar = (pedido) => {
     const url = 'https://lab-api-bq.herokuapp.com/orders/'
-    const id = produto.id
-    console.log(url+id)
+    const id = pedido.id
+    console.log(url + id)
+    const status = { "status": "finished" }
 
-    fetch(String(url+id), {
+    fetch(url + id, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
         'Authorization': `${tokenUser}`
       },
-      body: { status : "finished" }
+      body: JSON.stringify(status)
     })
       .then((response) => {
         response.json()
-      })  
+        listaPedidos()
+      })
       .then(data => {
         console.log(data)
       })
+
   }
 
   return (
     <div>
       {PedidosProntos.map((pedido) => {
-        <table>
-          <tbody>
-            <tr>
-              <th>Pedido nº 00{pedido.id}</th>
-              <th>Cliente: {pedido.client_name}</th>
-              <th>Mesa: {pedido.table}</th>
-            </tr>
-            <tr>
-              <th>Qtde</th>
-              <th>Ítem</th>
-              <th>Adicionais</th>
-            </tr>
-            {pedido.Products.map((itens) => {
+        const dataUpdated = new Date(pedido.updatedAt);
+        const dataCreated = new Date(pedido.createdAt);
+        const diferença = Math.abs(dataUpdated) - (dataCreated);
+        const minutes = Math.floor((diferença / 1000) / 60);
+        return (
+          <table key={pedido.id}>
+            <tbody>
               <tr>
-                <td>{itens.qtd}</td>
-                <td>{itens.name + " " + itens.flavor === 'null' ? '' : itens.flavor}</td>
-                <td>{itens.complement === 'null' ? '' : itens.complement}</td>
+                <th>Pedido nº {pedido.id}</th>
+                <th>Cliente: {pedido.client_name}</th>
+                <th>Mesa: {pedido.table}</th>
+                <th>Tempo: {minutes} min</th>
               </tr>
-            })}
-
-            <tr>
-              <th><button onClick={() => handleEntregar()}>ENTREGAR</button></th>
-            </tr>
-          </tbody>
-        </table>
+              <tr>
+                <th>Qtde</th>
+                <th>Ítem</th>
+                <th>Complemento</th>
+                <th>Adicionais</th>
+              </tr>
+              {pedido.Products.map((itens, index) => (
+                <tr key={index}>
+                  <td>{itens.qtd}</td>
+                  <td>{itens.name}</td>
+                  <td>{itens.flavor === 'null' ? '' : itens.flavor}</td>
+                  <td>{itens.complement === 'null' ? '' : itens.complement}</td>
+                </tr>
+              ))}
+              <tr>
+                <th><button onClick={() => handleEntregar(pedido)}>ENTREGAR</button></th>
+              </tr>
+            </tbody>
+          </table>
+        )
       })}
     </div>
   )

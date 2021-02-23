@@ -1,9 +1,6 @@
 import '../../Styles/CardapioCafeDaManha.css';
 import Trash from '../../assets/trash.png';
 import React, { useEffect, useState } from 'react';
-import { isEmpty } from 'lodash';
-
-
 
 const CardapioCafeManha = () => {
   const tokenUser = localStorage.getItem('token');
@@ -17,6 +14,11 @@ const CardapioCafeManha = () => {
   const [precoTotal, setPrecoTotal] = useState([])
   const [precosProdutos, setPrecosProdutos] = useState([])
 
+  // const FundoCafe = () => {
+  //   const date = new Date;
+  //   const hora = date.getHours()
+  //   if(hora >)
+  // }
 
   useEffect(() => {
     fetch('https://lab-api-bq.herokuapp.com/products', {
@@ -43,20 +45,6 @@ const CardapioCafeManha = () => {
   const handleAdicionar = (produto) => {
     setResumoPedido([...resumoPedido, produto])
     setPrecosProdutos([...precosProdutos, produto.price])
-    
-  }
-
-  const handleExcluir = (produto) => {
-    setPrecoTotal(precosProdutos.splice(resumoPedido.indexOf(produto), 1))
-    setProdutoExcluído(resumoPedido.splice(resumoPedido.indexOf(produto), 1))
-    handleSomar();
-  }
-
-  const handleSomar = () => {
-    setPrecoTotal(precosProdutos.reduce((total, num) => total + num))
-  }
-
-  const handleSubmit = () => {
     const produtoApi = resumoPedido.map((produto) => {
       return (
         {
@@ -81,9 +69,19 @@ const CardapioCafeManha = () => {
     }
     
     setOrder({ ...order, 'products': arrayProdutos })
+  }
 
-    console.log(order)
+  const handleExcluir = (produto) => {
+    setPrecoTotal(precosProdutos.splice(resumoPedido.indexOf(produto), 1))
+    setProdutoExcluído(resumoPedido.splice(resumoPedido.indexOf(produto), 1))
+    handleSomar();
+  }
 
+  const handleSomar = () => {
+    setPrecoTotal(precosProdutos.reduce((total, num) => total + num))
+  }
+
+  const handleSubmit = () => {
     fetch('https://lab-api-bq.herokuapp.com/orders', {
       method: 'POST',
       headers: {
@@ -94,22 +92,31 @@ const CardapioCafeManha = () => {
     })
       .then((response) => {
         response.json()
-      })  
+        setOrder({})
+        setResumoPedido([])
+        setPrecoTotal([])
+        setPrecosProdutos([])
+        setProdutoExcluído([])
+        document.getElementsByClassName('input').value = ''
+        alert("Pedido Criado com Sucesso!")
+      })
+      .catch((error) => {
+        alert(error.message)
+      })
   }
 
-  console.log(bebidas)
   return (
     <div>
 
       <div className='info-client'>
         <label>
           Nome:
-            <input type='text' name='nome' className='' required onChange={(event) => setOrder({ ...order, 'client': event.target.value })
+            <input type='text' name='nome' className='input' required onChange={(event) => setOrder({ ...order, 'client': event.target.value })
           } />
         </label>
         <label>
           Mesa:
-            <input type='text' name='mesa' className='' required onChange={(event) => setOrder({ ...order, 'table': event.target.value })
+            <input type='text' name='mesa' className='input' required onChange={(event) => setOrder({ ...order, 'table': event.target.value })
           } />
         </label>
       </div>
@@ -193,6 +200,7 @@ const CardapioCafeManha = () => {
           <tr>
             <th>Qtde</th>
             <th>Ítem</th>
+            <th>Complemento</th>
             <th>Adicionais</th>
             <th>Preço</th>
           </tr>
@@ -200,6 +208,7 @@ const CardapioCafeManha = () => {
             <tr key={index}>
               <td>1</td>
               <td>{produto.name}</td>
+              <td>{produto.flavor === 'null' ? '' : produto.flavor}</td>
               <td>{produto.complement === 'null' ? '' : produto.complement}</td>
               <td>R$ {produto.price},00</td>
               <td>
@@ -210,7 +219,7 @@ const CardapioCafeManha = () => {
           <tr className='total'>
             <th className='item-total'><h4>Total:</h4></th>
             <th className='item-total'><h4>R$ {precoTotal},00</h4></th>
-            <th><button onClick={() => handleSomar()}>Somar</button></th>
+            <th><button onClick={() => handleSomar()}>SOMAR</button></th>
             <th><button onClick={() => handleSubmit()}>FINALIZAR</button></th>
           </tr>
         </tbody>

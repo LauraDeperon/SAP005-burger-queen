@@ -5,7 +5,7 @@ function ListaPedidosPendentes() {
   const tokenUser = localStorage.getItem('token');
   const [PedidosAFazer, setPedidosAFazer] = useState([]);
 
-  useEffect(() => {
+  const listaPedidos = () => {
     fetch('https://lab-api-bq.herokuapp.com/orders', {
       method: 'GET',
       headers: {
@@ -15,69 +15,80 @@ function ListaPedidosPendentes() {
     })
       .then(response => response.json())
       .then(pedidos => {
-        const pedidosPendentes = pedidos.filter(itens => itens.status.includes('pending'));
+        const pedidosPendentes = pedidos.filter(itens => itens.status.includes('pending'))
         setPedidosAFazer(pedidosPendentes);
       })
-  }, [])
-
-  const handlePreparar = () => {
-
   }
 
-  const handleFinalizar = (produto) => {
-    const url = 'https://lab-api-bq.herokuapp.com/orders/'
-    const id = produto.id
-    console.log(url+id)
+  useEffect(() => {
+    listaPedidos()
+  }, [])
 
-    fetch(String(url+id), {
+  const handleAtualizar = () => {
+    listaPedidos()
+  }
+
+  const handlePreparar = (pedido, e) => {
+    const btnPreparar = e.target.parentNode.querySelector('.btn-preparar')
+    btnPreparar.classList.add('none')
+  }
+
+  const handleFinalizar = (pedido) => {
+    const url = 'https://lab-api-bq.herokuapp.com/orders/'
+    const id = pedido.id
+    const status = { "status": "ready" }
+
+    fetch(url + id, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
         'Authorization': `${tokenUser}`
       },
-      body: { status : "ready" }
+      body: JSON.stringify(status)
     })
       .then((response) => {
         response.json()
-      })  
-      .then(data => {
-        console.log(data)
+        listaPedidos()
       })
+      .then((data) => (
+        console.log(data)
+      ))
   }
 
   return (
-
-    
     <div>
-    {PedidosAFazer.map((pedido) => {
-        <table>
-          <tbody>
-            <tr>
-              <th>Pedido nº 00{pedido.id}</th>
-              <th>Cliente: {pedido.client_name}</th>
-              <th>Mesa: {pedido.table}</th>
-            </tr>
-            <tr>
-              <th>Qtde</th>
-              <th>Ítem</th>
-              <th>Adicionais</th>
-            </tr>
-
-            {pedido.Products.map((itens) => {
+      <button onClick={() => handleAtualizar()}>Atualizar Pedidos</button>
+      {PedidosAFazer.map((pedido) => {
+        return (
+          <table key={pedido.id}>
+            <tbody>
               <tr>
-                <td>{itens.qtd}</td>
-                <td>{itens.name + " " + itens.flavor === 'null' ? '' : itens.flavor}</td>
-                <td>{itens.complement === 'null' ? '' : itens.complement}</td>
+                <th>Pedido nº {pedido.id}</th>
+                <th>Cliente: {pedido.client_name}</th>
+                <th>Mesa: {pedido.table}</th>
               </tr>
-            })}
+              <tr>
+                <th>Qtde</th>
+                <th>Ítem</th>
+                <th>Complemento</th>
+                <th>Adicionais</th>
+              </tr>
 
-            <tr>
-              <th><button onClick={() => handlePreparar()}>PREPARAR</button></th>
-              <th><button onClick={() => handleFinalizar()}>FINALIZAR</button></th>
-            </tr>
-
-          </tbody>
-        </table>
+              {pedido.Products.map((itens, index) => (
+                <tr key={index}>
+                  <td>{itens.qtd}</td>
+                  <td>{itens.name}</td>
+                  <td>{itens.flavor === 'null' ? '' : itens.flavor}</td>
+                  <td>{itens.complement === 'null' ? '' : itens.complement}</td>
+                </tr>
+              ))}
+              <tr >
+                <th><button className='btn-preparar' onClick={(e) => handlePreparar(pedido, e)}>PREPARAR</button></th>
+                <th><button onClick={() => handleFinalizar(pedido)}>FINALIZAR</button></th>
+              </tr>
+            </tbody>
+          </table>
+        )
       })}
     </div>
   );
