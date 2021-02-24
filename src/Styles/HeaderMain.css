@@ -22,6 +22,7 @@
 	    justify-content: flex-start;
 	    align-items: center;
 	    align-content: center;
+        text-transform: capitalize;
     }
 
     .item-header2 > h2 {

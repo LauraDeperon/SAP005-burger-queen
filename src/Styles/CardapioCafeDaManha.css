@@ -93,16 +93,21 @@ h5{
     color: #000;
     font-weight: 700;
     padding: .2em 2em;
-
 }
 
+h1{
+    font-family: 'Oswald', sans-serif;
+    font-size: 40pt;
+    text-align: center;
+    font-weight: 300;
+    color: #E5A33E;
+}
 
 h4{
     font-family: 'Oswald', sans-serif;
     font-size: 30pt;
     text-align: center;
     font-weight: 300;
-
 }
 
 .resumo{

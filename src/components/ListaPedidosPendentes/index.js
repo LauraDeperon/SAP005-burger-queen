@@ -18,6 +18,7 @@ function ListaPedidosPendentes() {
         const pedidosPendentes = pedidos.filter(itens => itens.status.includes('pending'))
         setPedidosAFazer(pedidosPendentes);
       })
+ 
   }
 
   useEffect(() => {
@@ -28,7 +29,7 @@ function ListaPedidosPendentes() {
     listaPedidos()
   }
 
-  const handlePreparar = (pedido, e) => {
+  const handlePreparar = (e) => {
     const btnPreparar = e.target.parentNode.querySelector('.btn-preparar')
     btnPreparar.classList.add('none')
   }
@@ -48,11 +49,12 @@ function ListaPedidosPendentes() {
     })
       .then((response) => {
         response.json()
+        .then((data) => {
+          console.log(data)
+        })
         listaPedidos()
       })
-      .then((data) => (
-        console.log(data)
-      ))
+      
   }
 
   return (
@@ -83,7 +85,7 @@ function ListaPedidosPendentes() {
                 </tr>
               ))}
               <tr >
-                <th><button className='btn-preparar' onClick={(e) => handlePreparar(pedido, e)}>PREPARAR</button></th>
+                <th><button className='btn-preparar' onClick={(e) => handlePreparar(e)}>PREPARAR</button></th>
                 <th><button onClick={() => handleFinalizar(pedido)}>FINALIZAR</button></th>
               </tr>
             </tbody>
