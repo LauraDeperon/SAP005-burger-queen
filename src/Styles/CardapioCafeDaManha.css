@@ -68,19 +68,30 @@ button {
   outline: none;
 }
 
-button:hover {
-  background-color: #ecb868;
-  transform: scale(0.9);
+h5 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 25pt;
+  text-align: center;
+  text-transform: uppercase;
+  background-color: #e5a33e;
+  color: #000;
+  font-weight: 700;
+  padding: 0.2em 2em;
 }
 
-.itens {
-  display: flex;
-  justify-content: center;
-  margin-top: 3em;
-  border-style: double;
-  border-radius: 1em;
-  padding: 1em;
-  border-color: #e5a33e;
+h1 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 40pt;
+  text-align: center;
+  font-weight: 300;
+  color: #e5a33e;
+}
+
+h4 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 30pt;
+  text-align: center;
+  font-weight: 300;
 }
 
 h5 {

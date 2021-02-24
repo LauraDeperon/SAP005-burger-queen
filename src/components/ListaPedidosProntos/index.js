@@ -30,7 +30,6 @@ const ListaPedidosProntos = () => {
   const handleEntregar = (pedido) => {
     const url = 'https://lab-api-bq.herokuapp.com/orders/';
     const id = pedido.id;
-    console.log(url + id);
     const status = { status: 'finished' };
 
     fetch(url + id, {
@@ -40,14 +39,11 @@ const ListaPedidosProntos = () => {
         Authorization: `${tokenUser}`,
       },
       body: JSON.stringify(status),
-    })
-      .then((response) => {
-        response.json();
+    }).then((response) => {
+      response.json().then(() => {
         listaPedidos();
-      })
-      .then((data) => {
-        console.log(data);
       });
+    });
   };
 
   return (

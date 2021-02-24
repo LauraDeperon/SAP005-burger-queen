@@ -10,7 +10,7 @@ function PedidosAFazer() {
       <HeaderMain />
       <section className="container-description">
         <img src={IconOrder} alt="icon-order" className="icon-order"></img>
-        <h2>Pedidos</h2>
+        <h2>Pedidos Pendentes</h2>
       </section>
       <ListaPedidosPendentes />
     </div>

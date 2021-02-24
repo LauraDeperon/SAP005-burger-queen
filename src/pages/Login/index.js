@@ -15,28 +15,30 @@ function Login() {
   const handleSignIn = (event) => {
     event.preventDefault();
 
-    const options = {
+    fetch('https://lab-api-bq.herokuapp.com/auth', {
       method: 'POST',
       headers: {
         accept: 'application/json',
         'Content-Type': 'application/x-www-form-urlencoded',
       },
-      body: `email=${email}&password=${password}&restaurant=BurgerBeef`,
-    };
-
-    fetch('https://lab-api-bq.herokuapp.com/auth', options).then((response) => {
+      body: `email=${email}&password=${password}`,
+    }).then((response) => {
       response.json().then((data) => {
         const { token } = data;
         const { name } = data;
         const { role } = data;
-        if ((token, name, role)) {
+        if ((token, name, role === 'salao')) {
           localStorage.setItem('token', token);
           localStorage.setItem('name', name);
           localStorage.setItem('role', role);
-          console.log(localStorage.getItem('token'));
           history.push('/AnotarPedidos');
+        } else if ((token, name, role === 'cozinha')) {
+          localStorage.setItem('token', token);
+          localStorage.setItem('name', name);
+          localStorage.setItem('role', role);
+          history.push('/PedidosAFazer');
         } else {
-          alert('preencha todos os campos');
+          alert('Preencha os campos corretamente!');
         }
       });
     });
@@ -45,7 +47,6 @@ function Login() {
   return (
     <section className="page-login">
       <Header />
-
       <form className="form-login">
         <div className="field-login">
           <p>E-mail: </p>
@@ -59,7 +60,6 @@ function Login() {
             />
           </div>
         </div>
-
         <div className="field-login">
           <p>Senha: </p>
           <div className="input-container">
@@ -73,7 +73,6 @@ function Login() {
           </div>
         </div>
       </form>
-
       <div className="option-login">
         <button className="btn-login" type="submit" onClick={handleSignIn}>
           ENTRAR
@@ -82,7 +81,6 @@ function Login() {
           Ou clique <Link to="/Cadastro">AQUI</Link> para se cadastrar.
         </h3>
       </div>
-
       <Footer />
     </section>
   );

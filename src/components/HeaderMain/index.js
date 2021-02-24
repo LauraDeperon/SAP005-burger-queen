@@ -10,7 +10,7 @@ function HeaderMain() {
   const user = localStorage.getItem('name');
   const role = localStorage.getItem('role');
 
-  const handleSignOut = (event) => {
+  const handleSignOut = () => {
     alert('Usuário deslogado');
     localStorage.clear();
     history.push('/');

@@ -29,7 +29,7 @@ function ListaPedidosPendentes() {
     listaPedidos();
   };
 
-  const handlePreparar = (pedido, e) => {
+  const handlePreparar = (e) => {
     const btnPreparar = e.target.parentNode.querySelector('.btn-preparar');
     btnPreparar.classList.add('none');
   };
@@ -46,12 +46,11 @@ function ListaPedidosPendentes() {
         Authorization: `${tokenUser}`,
       },
       body: JSON.stringify(status),
-    })
-      .then((response) => {
-        response.json();
+    }).then((response) => {
+      response.json().then(() => {
         listaPedidos();
-      })
-      .then((data) => console.log(data));
+      });
+    });
   };
 
   return (
@@ -85,7 +84,7 @@ function ListaPedidosPendentes() {
                 <th>
                   <button
                     className="btn-preparar"
-                    onClick={(e) => handlePreparar(pedido, e)}
+                    onClick={(e) => handlePreparar(e)}
                   >
                     PREPARAR
                   </button>

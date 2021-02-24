@@ -13,15 +13,11 @@ const FormCadastro = () => {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(userInfo),
     })
-      .then((response) => response.json())
-      .then((data) => {
-        console.log(data);
-        if (data.id !== null) {
+      .then((response) => {
+        response.json().then(() => {
           alert('Usuário criado com sucesso!');
           history.push('/');
-        } else {
-          alert('Algo deu errado, por favor confira os dados novamente');
-        }
+        });
       })
       .catch((error) => {
         alert(error.message);
