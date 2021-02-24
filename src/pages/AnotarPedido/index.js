@@ -5,7 +5,6 @@ import CardapioCafeManha from '../../components/CardapioCafeManha/index';
 import '../../Styles/AnotarPedido.css';
 
 function AnotarPedidos() {
-
   return (
     <div className="">
       <HeaderMain />

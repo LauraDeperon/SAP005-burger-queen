@@ -9,7 +9,7 @@ function Cadastro() {
     <div className="page-cadastro">
       <Header />
       <FormCadastro />
-      <Footer/>
+      <Footer />
     </div>
   );
 }

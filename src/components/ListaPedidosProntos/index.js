@@ -10,52 +10,53 @@ const ListaPedidosProntos = () => {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `${tokenUser}`
+        Authorization: `${tokenUser}`,
       },
     })
-      .then(response => response.json())
-      .then(data => {
+      .then((response) => response.json())
+      .then((data) => {
         const products = data;
-        const pedidosEntregar = products.filter(itens => itens.status.includes('ready'));
-        setPedidosProntos(pedidosEntregar)
-      })
-  }
+        const pedidosEntregar = products.filter((itens) =>
+          itens.status.includes('ready')
+        );
+        setPedidosProntos(pedidosEntregar);
+      });
+  };
 
   useEffect(() => {
     listaPedidos();
-  }, [])
+  }, []);
 
   const handleEntregar = (pedido) => {
-    const url = 'https://lab-api-bq.herokuapp.com/orders/'
-    const id = pedido.id
-    console.log(url + id)
-    const status = { "status": "finished" }
+    const url = 'https://lab-api-bq.herokuapp.com/orders/';
+    const id = pedido.id;
+    console.log(url + id);
+    const status = { status: 'finished' };
 
     fetch(url + id, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `${tokenUser}`
+        Authorization: `${tokenUser}`,
       },
-      body: JSON.stringify(status)
+      body: JSON.stringify(status),
     })
       .then((response) => {
-        response.json()
-        listaPedidos()
+        response.json();
+        listaPedidos();
       })
-      .then(data => {
-        console.log(data)
-      })
-
-  }
+      .then((data) => {
+        console.log(data);
+      });
+  };
 
   return (
     <div>
       {PedidosProntos.map((pedido) => {
         const dataUpdated = new Date(pedido.updatedAt);
         const dataCreated = new Date(pedido.createdAt);
-        const diferença = Math.abs(dataUpdated) - (dataCreated);
-        const minutes = Math.floor((diferença / 1000) / 60);
+        const diferença = Math.abs(dataUpdated) - dataCreated;
+        const minutes = Math.floor(diferença / 1000 / 60);
         return (
           <table key={pedido.id}>
             <tbody>
@@ -80,14 +81,18 @@ const ListaPedidosProntos = () => {
                 </tr>
               ))}
               <tr>
-                <th><button onClick={() => handleEntregar(pedido)}>ENTREGAR</button></th>
+                <th>
+                  <button onClick={() => handleEntregar(pedido)}>
+                    ENTREGAR
+                  </button>
+                </th>
               </tr>
             </tbody>
           </table>
-        )
+        );
       })}
     </div>
-  )
+  );
 };
 
 export default ListaPedidosProntos;
