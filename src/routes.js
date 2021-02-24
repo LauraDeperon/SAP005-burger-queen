@@ -13,7 +13,7 @@ const PrivateRoute = ({ component: Component, ...rest }) => (
   <Route
     {...rest}
     render={(props) =>
-      isAuthenticated() ? <Component {...props} /> : <Redirect to='/' />
+      isAuthenticated() ? <Component {...props} /> : <Redirect to="/" />
     }
   />
 );
@@ -21,16 +21,16 @@ const PrivateRoute = ({ component: Component, ...rest }) => (
 const Routes = () => {
   return (
     <Switch>
-      <Route path='/' component={Login} exact />
-      <Route path='/Cadastro' component={Cadastro} exact />
-      <PrivateRoute path='/AnotarPedidos' component={AnotarPedidos} exact />
-      <PrivateRoute path='/PedidosAFazer' component={PedidosAFazer} exact />
+      <Route path="/" component={Login} exact />
+      <Route path="/Cadastro" component={Cadastro} exact />
+      <PrivateRoute path="/AnotarPedidos" component={AnotarPedidos} exact />
+      <PrivateRoute path="/PedidosAFazer" component={PedidosAFazer} exact />
       <PrivateRoute
-        path='/HistoricoPedidos'
+        path="/HistoricoPedidos"
         component={HistoricoPedidos}
         exact
       />
-      <PrivateRoute path='/PedidosProntos' component={PedidosProntos} exact />
+      <PrivateRoute path="/PedidosProntos" component={PedidosProntos} exact />
       <PrivateRoute component={() => <div>Page 404!</div>} />
     </Switch>
   );
