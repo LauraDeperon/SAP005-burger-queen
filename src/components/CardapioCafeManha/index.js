@@ -94,13 +94,18 @@ const CardapioCafeManha = () => {
         setPrecoTotal([])
         setPrecosProdutos([])
         setProdutoExcluído([])
-        document.getElementsByClassName('input').value = ''
+        clearInput()
         alert("Pedido Criado com Sucesso!")
         
       })
       .catch((error) => {
         alert(error.message)
       })
+  }
+
+  function clearInput() {
+    const inputs = document.querySelectorAll('input');
+    [].map.call(inputs, entrada => entrada.value = '');
   }
 
   return (
