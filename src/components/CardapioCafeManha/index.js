@@ -14,12 +14,6 @@ const CardapioCafeManha = () => {
   const [precoTotal, setPrecoTotal] = useState([])
   const [precosProdutos, setPrecosProdutos] = useState([])
 
-  // const FundoCafe = () => {
-  //   const date = new Date;
-  //   const hora = date.getHours()
-  //   if(hora >)
-  // }
-
   useEffect(() => {
     fetch('https://lab-api-bq.herokuapp.com/products', {
       method: 'GET',
@@ -67,7 +61,7 @@ const CardapioCafeManha = () => {
         qtd: value.length
       });
     }
-    
+
     setOrder({ ...order, 'products': arrayProdutos })
   }
 
@@ -92,6 +86,9 @@ const CardapioCafeManha = () => {
     })
       .then((response) => {
         response.json()
+        .then((data) => {
+          console.log(data)
+        })
         setOrder({})
         setResumoPedido([])
         setPrecoTotal([])
@@ -99,6 +96,7 @@ const CardapioCafeManha = () => {
         setProdutoExcluído([])
         document.getElementsByClassName('input').value = ''
         alert("Pedido Criado com Sucesso!")
+        
       })
       .catch((error) => {
         alert(error.message)
@@ -124,7 +122,7 @@ const CardapioCafeManha = () => {
       <table className='itens'>
         <tbody>
           <tr>
-            <th>Item</th>
+            <th>Café da Manhã</th>
             <th>Preço</th>
           </tr>
           {CardapioCafe.map((produto) => (
@@ -194,7 +192,7 @@ const CardapioCafeManha = () => {
           ))}
         </tbody>
       </table>
-
+      <h1>Resumo Pedido</h1>
       <table className='itens'>
         <tbody>
           <tr>
