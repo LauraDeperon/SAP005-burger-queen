@@ -14,8 +14,10 @@ function ListaPedidosPendentes() {
     })
       .then((response) => response.json())
       .then((pedidos) => {
-        const pedidosPendentes = pedidos.filter((itens) =>
-          itens.status.includes('pending')
+        const pedidosPendentes = pedidos.filter(
+          (itens) =>
+            itens.status.includes('preparing') ||
+            itens.status.includes('pending')
         );
         setPedidosAFazer(pedidosPendentes);
       });
@@ -29,9 +31,23 @@ function ListaPedidosPendentes() {
     listaPedidos();
   };
 
-  const handlePreparar = (e) => {
-    const btnPreparar = e.target.parentNode.querySelector('.btn-preparar');
-    btnPreparar.classList.add('none');
+  const handlePreparar = (pedido, e) => {
+    const url = 'https://lab-api-bq.herokuapp.com/orders/';
+    const id = pedido.id;
+    const status = { status: 'preparing' };
+
+    fetch(url + id, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `${tokenUser}`,
+      },
+      body: JSON.stringify(status),
+    }).then((response) => {
+      response.json().then(() => {
+        listaPedidos();
+      });
+    });
   };
 
   const handleFinalizar = (pedido) => {
@@ -64,6 +80,12 @@ function ListaPedidosPendentes() {
                 <th>Pedido nº {pedido.id}</th>
                 <th>Cliente: {pedido.client_name}</th>
                 <th>Mesa: {pedido.table}</th>
+                <th>
+                  Status:
+                  {pedido.status
+                    .replace('pending', 'Pendente')
+                    .replace('preparing', 'Preparando')}
+                </th>
               </tr>
               <tr>
                 <th>Qtde</th>
@@ -84,7 +106,7 @@ function ListaPedidosPendentes() {
                 <th>
                   <button
                     className="btn-preparar"
-                    onClick={(e) => handlePreparar(e)}
+                    onClick={(e) => handlePreparar(pedido, e)}
                   >
                     PREPARAR
                   </button>

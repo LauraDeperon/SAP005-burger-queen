@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import IconOrder from '../../assets/order.png';
 import '../../Styles/PedidosAFazer.css';
 import HeaderMain from '../../components/HeaderMain/index.js';
@@ -10,7 +11,13 @@ function PedidosAFazer() {
       <HeaderMain />
       <section className="container-description">
         <img src={IconOrder} alt="icon-order" className="icon-order"></img>
-        <h2>Pedidos Pendentes</h2>
+        <h2>
+          <Link to="/PedidosAFazer">Pedidos Pendentes</Link>
+        </h2>
+        <img src={IconOrder} alt="icon-order" className="icon-order"></img>
+        <h2>
+          <Link to="/HistoricoPedidos">Histórico Pedidos</Link>
+        </h2>
       </section>
       <ListaPedidosPendentes />
     </div>
