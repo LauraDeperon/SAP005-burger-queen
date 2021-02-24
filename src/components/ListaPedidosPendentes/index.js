@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
 function ListaPedidosPendentes() {
-
   const tokenUser = localStorage.getItem('token');
   const [PedidosAFazer, setPedidosAFazer] = useState([]);
 
@@ -10,50 +9,65 @@ function ListaPedidosPendentes() {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `${tokenUser}`
+        Authorization: `${tokenUser}`,
       },
     })
-      .then(response => response.json())
-      .then(pedidos => {
-        const pedidosPendentes = pedidos.filter(itens => itens.status.includes('pending'))
+      .then((response) => response.json())
+      .then((pedidos) => {
+        const pedidosPendentes = pedidos.filter(
+          (itens) =>
+            itens.status.includes('preparing') ||
+            itens.status.includes('pending')
+        );
         setPedidosAFazer(pedidosPendentes);
-      })
-  }
+      });
+  };
 
   useEffect(() => {
-    listaPedidos()
-  }, [])
+    listaPedidos();
+  }, []);
 
   const handleAtualizar = () => {
-    listaPedidos()
-  }
+    listaPedidos();
+  };
 
   const handlePreparar = (pedido, e) => {
-    const btnPreparar = e.target.parentNode.querySelector('.btn-preparar')
-    btnPreparar.classList.add('none')
-  }
-
-  const handleFinalizar = (pedido) => {
-    const url = 'https://lab-api-bq.herokuapp.com/orders/'
-    const id = pedido.id
-    const status = { "status": "ready" }
+    const url = 'https://lab-api-bq.herokuapp.com/orders/';
+    const id = pedido.id;
+    const status = { status: 'preparing' };
 
     fetch(url + id, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `${tokenUser}`
+        Authorization: `${tokenUser}`,
       },
-      body: JSON.stringify(status)
-    })
-      .then((response) => {
-        response.json()
-        listaPedidos()
-      })
-      .then((data) => (
-        console.log(data)
-      ))
-  }
+      body: JSON.stringify(status),
+    }).then((response) => {
+      response.json().then(() => {
+        listaPedidos();
+      });
+    });
+  };
+
+  const handleFinalizar = (pedido) => {
+    const url = 'https://lab-api-bq.herokuapp.com/orders/';
+    const id = pedido.id;
+    const status = { status: 'ready' };
+
+    fetch(url + id, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `${tokenUser}`,
+      },
+      body: JSON.stringify(status),
+    }).then((response) => {
+      response.json().then(() => {
+        listaPedidos();
+      });
+    });
+  };
 
   return (
     <div>
@@ -66,6 +80,12 @@ function ListaPedidosPendentes() {
                 <th>Pedido nº {pedido.id}</th>
                 <th>Cliente: {pedido.client_name}</th>
                 <th>Mesa: {pedido.table}</th>
+                <th>
+                  Status:
+                  {pedido.status
+                    .replace('pending', 'Pendente')
+                    .replace('preparing', 'Preparando')}
+                </th>
               </tr>
               <tr>
                 <th>Qtde</th>
@@ -82,13 +102,24 @@ function ListaPedidosPendentes() {
                   <td>{itens.complement === 'null' ? '' : itens.complement}</td>
                 </tr>
               ))}
-              <tr >
-                <th><button className='btn-preparar' onClick={(e) => handlePreparar(pedido, e)}>PREPARAR</button></th>
-                <th><button onClick={() => handleFinalizar(pedido)}>FINALIZAR</button></th>
+              <tr>
+                <th>
+                  <button
+                    className='btn-preparar'
+                    onClick={(e) => handlePreparar(pedido, e)}
+                  >
+                    PREPARAR
+                  </button>
+                </th>
+                <th>
+                  <button onClick={() => handleFinalizar(pedido)}>
+                    FINALIZAR
+                  </button>
+                </th>
               </tr>
             </tbody>
           </table>
-        )
+        );
       })}
     </div>
   );

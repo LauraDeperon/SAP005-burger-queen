@@ -10,49 +10,49 @@ const CardapioCafeManha = () => {
   const [bebidas, setBebidas] = useState([]);
   const [resumoPedido, setResumoPedido] = useState([]);
   const [order, setOrder] = useState({});
-  const [produtoExcluído, setProdutoExcluído] = useState([])
-  const [precoTotal, setPrecoTotal] = useState([])
-  const [precosProdutos, setPrecosProdutos] = useState([])
-
-  // const FundoCafe = () => {
-  //   const date = new Date;
-  //   const hora = date.getHours()
-  //   if(hora >)
-  // }
+  const [produtoExcluído, setProdutoExcluído] = useState([]);
+  const [precoTotal, setPrecoTotal] = useState([]);
+  const [precosProdutos, setPrecosProdutos] = useState([]);
 
   useEffect(() => {
     fetch('https://lab-api-bq.herokuapp.com/products', {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `${tokenUser}`
+        Authorization: `${tokenUser}`,
       },
     })
-      .then(response => response.json())
-      .then(data => {
+      .then((response) => response.json())
+      .then((data) => {
         const products = data;
-        const produtosCafe = products.filter(itens => itens.type.includes('breakfast'));
+        const produtosCafe = products.filter((itens) =>
+          itens.type.includes('breakfast')
+        );
         setCardapioCafe(produtosCafe);
-        const hamburgueres = products.filter(itens => itens.sub_type.includes('hamburguer'));
+        const hamburgueres = products.filter((itens) =>
+          itens.sub_type.includes('hamburguer')
+        );
         setHamburgueres(hamburgueres);
-        const acompanhamentos = products.filter(itens => itens.sub_type.includes('side'));
+        const acompanhamentos = products.filter((itens) =>
+          itens.sub_type.includes('side')
+        );
         setAcompanhamentos(acompanhamentos);
-        const bebidas = products.filter(itens => itens.sub_type.includes('drinks'));
+        const bebidas = products.filter((itens) =>
+          itens.sub_type.includes('drinks')
+        );
         setBebidas(bebidas);
-      })
-  }, [])
+      });
+  }, []);
 
   const handleAdicionar = (produto) => {
-    setResumoPedido([...resumoPedido, produto])
-    setPrecosProdutos([...precosProdutos, produto.price])
+    setResumoPedido([...resumoPedido, produto]);
+    setPrecosProdutos([...precosProdutos, produto.price]);
     const produtoApi = resumoPedido.map((produto) => {
-      return (
-        {
-          id: produto.id,
-          qtd: 1
-        }
-      )
-    })
+      return {
+        id: produto.id,
+        qtd: 1,
+      };
+    });
 
     const qtd = produtoApi.reduce(function (r, a) {
       r[a.id] = r[a.id] || [];
@@ -64,60 +64,73 @@ const CardapioCafeManha = () => {
     for (const [key, value] of Object.entries(qtd)) {
       arrayProdutos.push({
         id: key,
-        qtd: value.length
+        qtd: value.length,
       });
     }
-    
-    setOrder({ ...order, 'products': arrayProdutos })
-  }
+
+    setOrder({ ...order, products: arrayProdutos });
+  };
 
   const handleExcluir = (produto) => {
-    setPrecoTotal(precosProdutos.splice(resumoPedido.indexOf(produto), 1))
-    setProdutoExcluído(resumoPedido.splice(resumoPedido.indexOf(produto), 1))
+    setPrecoTotal(precosProdutos.splice(resumoPedido.indexOf(produto), 1));
+    setProdutoExcluído(resumoPedido.splice(resumoPedido.indexOf(produto), 1));
     handleSomar();
-  }
+  };
 
   const handleSomar = () => {
-    setPrecoTotal(precosProdutos.reduce((total, num) => total + num))
-  }
+    setPrecoTotal(precosProdutos.reduce((total, num) => total + num));
+  };
 
   const handleSubmit = () => {
     fetch('https://lab-api-bq.herokuapp.com/orders', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `${tokenUser}`
+        Authorization: `${tokenUser}`,
       },
-      body: JSON.stringify(order)
+      body: JSON.stringify(order),
     })
       .then((response) => {
-        response.json()
-        setOrder({})
-        setResumoPedido([])
-        setPrecoTotal([])
-        setPrecosProdutos([])
-        setProdutoExcluído([])
-        document.getElementsByClassName('input').value = ''
-        alert("Pedido Criado com Sucesso!")
+        response.json();
+        setOrder({});
+        setResumoPedido([]);
+        setPrecoTotal([]);
+        setPrecosProdutos([]);
+        setProdutoExcluído([]);
+        document.getElementsByClassName('input').value = '';
+        alert('Pedido Criado com Sucesso!');
       })
       .catch((error) => {
-        alert(error.message)
-      })
-  }
+        alert(error.message);
+      });
+  };
 
   return (
     <div>
-
       <div className='info-client'>
         <label>
           Nome:
-            <input type='text' name='nome' className='input' required onChange={(event) => setOrder({ ...order, 'client': event.target.value })
-          } />
+          <input
+            type='text'
+            name='nome'
+            className='input'
+            required
+            onChange={(event) =>
+              setOrder({ ...order, client: event.target.value })
+            }
+          />
         </label>
         <label>
           Mesa:
-            <input type='text' name='mesa' className='input' required onChange={(event) => setOrder({ ...order, 'table': event.target.value })
-          } />
+          <input
+            type='text'
+            name='mesa'
+            className='input'
+            required
+            onChange={(event) =>
+              setOrder({ ...order, table: event.target.value })
+            }
+          />
         </label>
       </div>
 
@@ -148,7 +161,7 @@ const CardapioCafeManha = () => {
           </tr>
           {hamburgueres.map((produto) => (
             <tr key={produto.id}>
-              <td>{produto.name + " " + produto.flavor}</td>
+              <td>{produto.name + ' ' + produto.flavor}</td>
               <td>{produto.complement === 'null' ? '' : produto.complement}</td>
               <td>R$ {produto.price},00</td>
               <td>
@@ -212,20 +225,35 @@ const CardapioCafeManha = () => {
               <td>{produto.complement === 'null' ? '' : produto.complement}</td>
               <td>R$ {produto.price},00</td>
               <td>
-                <button><img className='icon-trash' src={Trash} alt='icon-trash' onClick={() => handleExcluir(produto)} /></button>
+                <button>
+                  <img
+                    className='icon-trash'
+                    src={Trash}
+                    alt='icon-trash'
+                    onClick={() => handleExcluir(produto)}
+                  />
+                </button>
               </td>
             </tr>
           ))}
           <tr className='total'>
-            <th className='item-total'><h4>Total:</h4></th>
-            <th className='item-total'><h4>R$ {precoTotal},00</h4></th>
-            <th><button onClick={() => handleSomar()}>SOMAR</button></th>
-            <th><button onClick={() => handleSubmit()}>FINALIZAR</button></th>
+            <th className='item-total'>
+              <h4>Total:</h4>
+            </th>
+            <th className='item-total'>
+              <h4>R$ {precoTotal},00</h4>
+            </th>
+            <th>
+              <button onClick={() => handleSomar()}>SOMAR</button>
+            </th>
+            <th>
+              <button onClick={() => handleSubmit()}>FINALIZAR</button>
+            </th>
           </tr>
         </tbody>
       </table>
     </div>
-  )
+  );
 };
 
 export default CardapioCafeManha;

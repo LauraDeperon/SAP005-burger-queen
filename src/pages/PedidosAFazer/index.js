@@ -1,18 +1,23 @@
 import React from 'react';
-import IconOrder from '../../assets/order.png'
+import { Link } from 'react-router-dom';
+import IconOrder from '../../assets/order.png';
 import '../../Styles/PedidosAFazer.css';
 import HeaderMain from '../../components/HeaderMain/index.js';
 import ListaPedidosPendentes from '../../components/ListaPedidosPendentes/index.js';
 
 function PedidosAFazer() {
-
   return (
-
-    <div className="page-orders">
+    <div className='page-orders'>
       <HeaderMain />
-      <section className="container-description">
-        <img src={IconOrder} alt="icon-order" className="icon-order"></img>
-        <h2>Pedidos</h2>
+      <section className='container-description'>
+        <img src={IconOrder} alt='icon-order' className='icon-order'></img>
+        <h2>
+          <Link to='/PedidosAFazer'>Pedidos Pendentes</Link>
+        </h2>
+        <img src={IconOrder} alt='icon-order' className='icon-order'></img>
+        <h2>
+          <Link to='/HistoricoPedidos'>Histórico Pedidos</Link>
+        </h2>
       </section>
       <ListaPedidosPendentes />
     </div>

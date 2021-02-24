@@ -1,26 +1,27 @@
+import React from 'react';
 import { Link } from 'react-router-dom';
 import IconOrder from '../../assets/order.png';
+import '../../Styles/PedidosAFazer.css';
 import HeaderMain from '../../components/HeaderMain/index.js';
-import '../../Styles/PedidosProntos.css';
-import ListaPedidosProntos from '../../components/ListaPedidosProntos/index.js';
+import ListaPedidos from '../../components/ListaPedidos/index.js';
 
-function PedidosProntos() {
+function PedidosAFazer() {
   return (
-    <div className=''>
+    <div className='page-orders'>
       <HeaderMain />
       <section className='container-description'>
         <img src={IconOrder} alt='icon-order' className='icon-order'></img>
         <h2>
-          <Link to='/AnotarPedidos'>Anotar Pedidos</Link>
+          <Link to='/PedidosAFazer'>Pedidos Pendentes</Link>
         </h2>
         <img src={IconOrder} alt='icon-order' className='icon-order'></img>
         <h2>
-          <Link to='/PedidosProntos'>Pedidos Prontos</Link>
+          <Link to='/HistoricoPedidos'>Histórico Pedidos</Link>
         </h2>
       </section>
-      <ListaPedidosProntos />
+      <ListaPedidos />
     </div>
   );
 }
 
-export default PedidosProntos;
+export default PedidosAFazer;
