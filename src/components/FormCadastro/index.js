@@ -26,13 +26,13 @@ const FormCadastro = () => {
   };
 
   return (
-    <form className="form-cadastro">
+    <form className='form-cadastro'>
       <label>
         Nome:
         <input
-          type="text"
-          name="nome"
-          className="input-text"
+          type='text'
+          name='nome'
+          className='input-text'
           required
           onChange={(event) =>
             setUser({ ...userInfo, name: event.target.value })
@@ -43,9 +43,9 @@ const FormCadastro = () => {
       <label>
         E-mail:
         <input
-          type="text"
-          name="email"
-          className="input-text"
+          type='text'
+          name='email'
+          className='input-text'
           required
           onChange={(event) =>
             setUser({ ...userInfo, email: event.target.value })
@@ -56,9 +56,9 @@ const FormCadastro = () => {
       <label>
         Senha:
         <input
-          type="password"
-          name="senha"
-          className="input-text"
+          type='password'
+          name='senha'
+          className='input-text'
           required
           onChange={(event) =>
             setUser({ ...userInfo, password: event.target.value })
@@ -66,13 +66,13 @@ const FormCadastro = () => {
         />
       </label>
 
-      <section className="option-setor">
+      <section className='option-setor'>
         <label>
           <input
-            type="radio"
-            value="cozinha"
-            name="role"
-            className="input-radio"
+            type='radio'
+            value='cozinha'
+            name='role'
+            className='input-radio'
             required
             onChange={(event) =>
               setUser({ ...userInfo, role: event.target.value })
@@ -83,10 +83,10 @@ const FormCadastro = () => {
 
         <label>
           <input
-            type="radio"
-            value="salao"
-            name="role"
-            className="input-radio"
+            type='radio'
+            value='salao'
+            name='role'
+            className='input-radio'
             required
             onChange={(event) =>
               setUser({ ...userInfo, role: event.target.value })
@@ -97,9 +97,9 @@ const FormCadastro = () => {
       </section>
 
       <button
-        type="submit"
-        value="enviar"
-        className="btn-cadastrar"
+        type='submit'
+        value='enviar'
+        className='btn-cadastrar'
         onClick={(event) => handleSubmit(event)}
       >
         CADASTRAR

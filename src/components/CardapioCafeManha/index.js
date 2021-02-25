@@ -114,13 +114,13 @@ const CardapioCafeManha = () => {
 
   return (
     <div>
-      <div className="info-client">
+      <div className='info-client'>
         <label>
           Nome:
           <input
-            type="text"
-            name="nome"
-            className="input"
+            type='text'
+            name='nome'
+            className='input'
             required
             onChange={(event) =>
               setOrder({ ...order, client: event.target.value })
@@ -130,9 +130,9 @@ const CardapioCafeManha = () => {
         <label>
           Mesa:
           <input
-            type="text"
-            name="mesa"
-            className="input"
+            type='text'
+            name='mesa'
+            className='input'
             required
             onChange={(event) =>
               setOrder({ ...order, table: event.target.value })
@@ -141,7 +141,7 @@ const CardapioCafeManha = () => {
         </label>
       </div>
 
-      <table className="itens">
+      <table className='itens'>
         <tbody>
           <tr>
             <th>Café da Manhã</th>
@@ -159,7 +159,7 @@ const CardapioCafeManha = () => {
         </tbody>
       </table>
 
-      <table className="itens">
+      <table className='itens'>
         <tbody>
           <tr>
             <th>Hambúrgueres</th>
@@ -179,7 +179,7 @@ const CardapioCafeManha = () => {
         </tbody>
       </table>
 
-      <table className="itens">
+      <table className='itens'>
         <tbody>
           <tr>
             <th>Acompanhamentos</th>
@@ -197,7 +197,7 @@ const CardapioCafeManha = () => {
         </tbody>
       </table>
 
-      <table className="itens">
+      <table className='itens'>
         <tbody>
           <tr>
             <th>Bebidas</th>
@@ -215,7 +215,7 @@ const CardapioCafeManha = () => {
         </tbody>
       </table>
       <h1>Resumo Pedido</h1>
-      <table className="itens">
+      <table className='itens'>
         <tbody>
           <tr>
             <th>Qtde</th>
@@ -234,20 +234,20 @@ const CardapioCafeManha = () => {
               <td>
                 <button>
                   <img
-                    className="icon-trash"
+                    className='icon-trash'
                     src={Trash}
-                    alt="icon-trash"
+                    alt='icon-trash'
                     onClick={() => handleExcluir(produto)}
                   />
                 </button>
               </td>
             </tr>
           ))}
-          <tr className="total">
-            <th className="item-total">
+          <tr className='total'>
+            <th className='item-total'>
               <h4>Total:</h4>
             </th>
-            <th className="item-total">
+            <th className='item-total'>
               <h4>R$ {precoTotal},00</h4>
             </th>
             <th>

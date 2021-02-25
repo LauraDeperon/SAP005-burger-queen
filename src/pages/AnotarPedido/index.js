@@ -9,14 +9,14 @@ function AnotarPedidos() {
   return (
     <div>
       <HeaderMain />
-      <section className="container-description">
-        <img src={IconOrder} alt="icon-order" className="icon-order"></img>
+      <section className='container-description'>
+        <img src={IconOrder} alt='icon-order' className='icon-order'></img>
         <h2>
-          <Link to="/AnotarPedidos">Anotar Pedidos</Link>
+          <Link to='/AnotarPedidos'>Anotar Pedidos</Link>
         </h2>
-        <img src={IconOrder} alt="icon-order" className="icon-order"></img>
+        <img src={IconOrder} alt='icon-order' className='icon-order'></img>
         <h2>
-          <Link to="/PedidosProntos">Pedidos Prontos</Link>
+          <Link to='/PedidosProntos'>Pedidos Prontos</Link>
         </h2>
       </section>
       <CardapioCafeManha />

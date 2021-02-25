@@ -6,7 +6,7 @@ import '../../Styles/SignUp.css';
 
 function Cadastro() {
   return (
-    <div className="page-cadastro">
+    <div className='page-cadastro'>
       <Header />
       <FormCadastro />
       <Footer />

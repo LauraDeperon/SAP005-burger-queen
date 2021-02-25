@@ -105,7 +105,7 @@ function ListaPedidosPendentes() {
               <tr>
                 <th>
                   <button
-                    className="btn-preparar"
+                    className='btn-preparar'
                     onClick={(e) => handlePreparar(pedido, e)}
                   >
                     PREPARAR
