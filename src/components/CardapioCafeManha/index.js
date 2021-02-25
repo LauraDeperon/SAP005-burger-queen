@@ -69,6 +69,7 @@ const CardapioCafeManha = () => {
     }
 
     setOrder({ ...order, products: arrayProdutos });
+    alert(produto.name + 'adicionado!');
   };
 
   const handleExcluir = (produto) => {
