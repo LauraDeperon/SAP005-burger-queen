@@ -92,19 +92,20 @@ const CardapioCafeManha = () => {
       body: JSON.stringify(order),
     })
       .then((response) => {
-        response.json().then((data) => {
-          console.log(data);
-        });
-        setOrder({});
-        setResumoPedido([]);
-        setPrecoTotal([]);
-        setPrecosProdutos([]);
-        setProdutoExcluído([]);
-        clearInput();
-        alert('Pedido Criado com Sucesso!');
+        response.json()
+          .then((data) => {
+            console.log(data);
+            setOrder({});
+            setResumoPedido([]);
+            setPrecoTotal([]);
+            setPrecosProdutos([]);
+            setProdutoExcluído([]);
+            clearInput();
+            alert('Pedido Criado com Sucesso!');
+          });
       })
-      .catch((error) => {
-        alert(error.message);
+      .catch(() => {
+        alert("Preencha todos os campos!");
       });
   };
 
