@@ -15,9 +15,10 @@ body {
 
 h2 {
   font-family: 'Oswald', sans-serif;
-  font-size: 40pt;
+  font-size:27pt;
   text-align: center;
-  letter-spacing: 0.1em;
+  letter-spacing: .1em;
+  margin-top:2em
 }
 
 .order-info {
@@ -34,14 +35,14 @@ h2 {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   flex: 2;
 }
 
 .info-client > label {
   text-align: start;
   font-family: 'Oswald', sans-serif;
-  font-size: 24pt;
+  font-size: 20pt;
   font-weight: 600;
   margin-bottom: 1em;
   color: #000;
@@ -49,34 +50,33 @@ h2 {
   flex-direction: column;
 }
 
-.info-client > label > input {
-  height: 3em;
-  width: 22em;
-  border-radius: 0.5em;
+.info-client > label > input{
+  height: 2em;
+  width: 14em;
+  border-radius: .5em;
+
 }
 
 /* -------RESUMO PEDIDO ---------- */
 
 .container-resum {
   margin-top: 1em;
-  color: #000;
-  flex: 3;
-  text-align: center;
-  overflow-x: scroll;
+  flex:3;
+  background-color: rgba(0, 0, 0, 0.233);
+  text-align: center; 
+  overflow-x: scroll; 
+  border-radius: .2em;
+  height: 10em;
 }
 
 .container-resum > h2 {
   font-family: 'Oswald', sans-serif;
-  color: #000;
-  font-size: 23pt;
+  color:#000;
+  font-size: 22pt;
   font-weight: 800;
+   margin-top: 1em;
 }
 
-.container-resum > h2 {
-  font-family: 'Oswald', sans-serif;
-  font-size: 30pt;
-  font-weight: 800;
-}
 
 .resum-itens {
   display: flex;
@@ -92,23 +92,29 @@ h2 {
 
 .details-order {
   display: flex;
-  width: 17em;
   align-items: center;
   text-align: center;
   flex-direction: column;
-  background-color: #f2cc91;
-  padding: 2em;
-  border-radius: 1em;
-  margin: 1em;
+  align-content: center;
+  background-color: #F2CC91;
+  padding: .4em;
+  border-radius: .2em;
+  margin: .5em
+}
+
+.details-order > p{
+  font-size: 12px;
+  color: #000;
+  line-height:12px;
+  
 }
 
 .btn-delete {
   background-color: #000;
-  width: 6em;
   cursor: pointer;
   border-radius: 2em;
-  padding: 0.8em;
-  border: none;
+  padding: .2em;
+  border:none;
   outline: none;
   transition: all 0.4s ease-in-out;
   -webkit-transition: all 0.4s ease-in-out;
@@ -120,9 +126,8 @@ h2 {
 }
 
 .icon-trash {
-  width: 3em;
-  height: 3em;
-  padding: 0.2em;
+  width: 2em;
+  height: 2em;
 }
 
 .icon-trash:hover {
@@ -137,7 +142,6 @@ h2 {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  padding: 2em;
 }
 
 .item-total:nth-child(1) {
@@ -155,14 +159,17 @@ h2 {
 
 .item-total > h4 {
   font-family: 'Oswald', sans-serif;
-  color: #fff;
-  font-size: 30pt;
-  padding: 0.2em;
-  letter-spacing: 0.1em;
+  color:#fff;
+  font-size: 20pt;
+  margin-left:1.5em;
+  padding: .2em;
+  letter-spacing: .1em;
   font-weight: 900;
-  border-radius: 0.5em;
-  background-color: #000;
+  border-radius: .5em;
+  background-color:#000;  
+
 }
+
 
 .btn-somar {
   background-color: #000;
@@ -198,7 +205,7 @@ h2 {
   font-family: 'Oswald', sans-serif;
   border-radius: 1.5em;
   padding: 0.5em 1em;
-  font-size: 23pt;
+  font-size: 19pt;
   align-items: center;
   cursor: pointer;
   transition: all 0.4s ease-in-out;
@@ -235,36 +242,37 @@ h2 {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  border: double 0.2em;
+  border: double .1em;
   border-color: #e5a33e;
-  border-radius: 0.5em;
-  padding: 1.5em 2em;
-  width: 8em;
-  height: 15em;
-  margin: 1em;
+  border-radius: .5em;
+  width: 7em;
+  height: 10em;
+  margin:1em
+
 }
 
 .itens-menu > h3 {
   font-family: 'Oswald', sans-serif;
   font-weight: 600;
-  font-size: 29pt;
+  font-size: 18pt;
 }
 
 .itens-menu > p {
   font-family: 'Open Sans', sans-serif;
-  font-size: 20pt;
+  font-size:12pt;
 }
 
-.itens-menu > img {
-  width: 5em;
-  height: 5em;
-  border-radius: 10em;
+.itens-menu > img{
+  width: 3em;
+  height: 3em;
+  border-radius: 100em;
 }
+
 
 .btn-add-item {
   background-color: #e5a33e;
   font-family: 'Open Sans', sans-serif;
-  font-size: 40pt;
+  font-size: 25pt;
   border: none;
   color: black;
   border-radius: 2em;
