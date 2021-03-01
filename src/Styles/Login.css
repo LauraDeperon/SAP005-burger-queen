@@ -35,38 +35,39 @@ a:hover {
   justify-content: center;
   align-items: center;
   text-transform: uppercase;
-  width: 60%;
-  margin: 3em auto;
+  width: 80%;
+  margin: 0 auto;
 }
 
 .field-login {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  margin-bottom: 1em;
 }
 
+
 .field-login > p {
-  font-size: 18pt;
+  font-size: 22pt;
   font-weight: 600;
   color: #000;
 }
 
 .icon-user {
-  max-width: 1.5em;
+  max-width: 1em;
 }
 
 .input-container {
   background-color: #fff;
   display: flex;
-  align-items: center;
-  border-radius: 0.5em;
-  padding: 0.2em;
+  border-radius: 0.2em;
   margin-left: 1em;
+  width: 67%;
+  align-items: center;
 }
 
 .input-container > img {
-  margin-left: 0.5em;
+  margin-left: 0.2em;
 }
 
 .input-container > input {
@@ -75,6 +76,7 @@ a:hover {
   outline: none;
   border: none;
   border-radius: 0.5em;
+  font-size: 22pt;
 }
 
 .option-login {
@@ -90,7 +92,7 @@ a:hover {
   font-family: 'Oswald', sans-serif;
   border-radius: 1.5em;
   padding: 0.5em 3em;
-  font-size: 19pt;
+  font-size: 23pt;
   cursor: pointer;
   box-shadow: 4px 1px 4px 0 rgba(240, 235, 235, 0.16);
   -webkit-box-shadow: 3px 3px 3px 0 rgba(136, 136, 136, 0.16);
@@ -110,14 +112,3 @@ a:hover {
   transform: scale(0.9);
 }
 
-@media only screen and (min-width: 1024px) {
-  .page-login {
-    padding: 1em;
-  }
-
-  .form-login {
-    width: 40%;
-    margin: 0 auto;
-    padding: 3em 1em;
-  }
-}
