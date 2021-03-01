@@ -14,7 +14,8 @@
 
 .footer > p {
   font-family: 'Open Sans', sans-serif;
-  font-size: 14pt;
+  font-size: 11pt;
+  font-weight: 100;
 }
 
 .footer > p > a {

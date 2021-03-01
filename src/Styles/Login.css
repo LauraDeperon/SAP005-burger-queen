@@ -29,21 +29,22 @@ a:hover {
 .form-login {
   background-color: #e4a240;
   border-radius: 0.5em;
-  padding: 3em 1em;
+  padding: 1em;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-transform: uppercase;
-  width: 80%;
+  width: 60%;
   margin: 0 auto;
+  top:2em;
 }
 
 .field-login {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 1em;
+  margin-bottom: .1em;
 }
 
 
@@ -54,7 +55,7 @@ a:hover {
 }
 
 .icon-user {
-  max-width: 1em;
+  max-width: .8em;
 }
 
 .input-container {
@@ -62,8 +63,9 @@ a:hover {
   display: flex;
   border-radius: 0.2em;
   margin-left: 1em;
-  width: 67%;
+  width: 60%;
   align-items: center;
+  padding: .2em;
 }
 
 .input-container > img {
@@ -71,19 +73,19 @@ a:hover {
 }
 
 .input-container > input {
-  width: 23em;
-  height: 3em;
+  height: 20%;
+  width: 100%;
   outline: none;
   border: none;
   border-radius: 0.5em;
-  font-size: 22pt;
+  font-size: 15pt;
 }
 
 .option-login {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 2em 2em;
+  margin: 1em;
 }
 
 .btn-login {
@@ -92,7 +94,7 @@ a:hover {
   font-family: 'Oswald', sans-serif;
   border-radius: 1.5em;
   padding: 0.5em 3em;
-  font-size: 23pt;
+  font-size: 19pt;
   cursor: pointer;
   box-shadow: 4px 1px 4px 0 rgba(240, 235, 235, 0.16);
   -webkit-box-shadow: 3px 3px 3px 0 rgba(136, 136, 136, 0.16);
