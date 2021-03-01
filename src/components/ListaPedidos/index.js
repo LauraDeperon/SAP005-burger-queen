@@ -47,7 +47,6 @@ function ListaPedidos() {
               </td>
             </tr>
           ))}
-          ;
         </tbody>
       </table>
     </div>
