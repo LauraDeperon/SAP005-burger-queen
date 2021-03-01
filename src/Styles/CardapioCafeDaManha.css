@@ -1,19 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 
-body{
-  color:#fff;
+body {
+  color: #fff;
   font-family: 'Oswald', sans-serif;
   font-size: 30pt;
-  text-align: center;  
+  text-align: center;
 }
 
-.main{
+.main {
   width: 90%;
   margin: 0 auto;
 }
 
-h2{
+h2 {
   font-family: 'Oswald', sans-serif;
   font-size:27pt;
   text-align: center;
@@ -21,7 +21,7 @@ h2{
   margin-top:2em
 }
 
-.order-info{
+.order-info {
   background-color: #e5a33e;
   display: flex;
   justify-content: space-around;
@@ -31,7 +31,7 @@ h2{
 
 /* ------------------INFORMAÇÕES CLIENTE------------------- */
 
-.info-client{
+.info-client {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -39,14 +39,14 @@ h2{
   flex: 2;
 }
 
-.info-client > label{
+.info-client > label {
   text-align: start;
   font-family: 'Oswald', sans-serif;
   font-size: 20pt;
   font-weight: 600;
   margin-bottom: 1em;
-  color:#000;
-  display:flex;
+  color: #000;
+  display: flex;
   flex-direction: column;
 }
 
@@ -54,11 +54,12 @@ h2{
   height: 2em;
   width: 14em;
   border-radius: .5em;
+
 }
 
 /* -------RESUMO PEDIDO ---------- */
 
-.container-resum{
+.container-resum {
   margin-top: 1em;
   flex:3;
   background-color: rgba(0, 0, 0, 0.233);
@@ -68,18 +69,19 @@ h2{
   height: 10em;
 }
 
-.container-resum > h2{
+.container-resum > h2 {
   font-family: 'Oswald', sans-serif;
   color:#000;
   font-size: 22pt;
   font-weight: 800;
-  margin-top: 1em;
+   margin-top: 1em;
 }
 
-.resum-itens{
+
+.resum-itens {
   display: flex;
   align-items: center;
-  flex-grow:initial;
+  flex-grow: initial;
   font-family: 'Open Sans', sans-serif;
   font-weight: 500;
   font-size: 18pt;
@@ -88,7 +90,7 @@ h2{
   text-align: start;
 }
 
-.details-order{
+.details-order {
   display: flex;
   align-items: center;
   text-align: center;
@@ -107,7 +109,7 @@ h2{
   
 }
 
-.btn-delete{
+.btn-delete {
   background-color: #000;
   cursor: pointer;
   border-radius: 2em;
@@ -118,9 +120,9 @@ h2{
   -webkit-transition: all 0.4s ease-in-out;
 }
 
-.btn-delete:hover{
+.btn-delete:hover {
   background-color: rgba(0, 0, 0, 0.651);
-  transform: scale(.9);
+  transform: scale(0.9);
 }
 
 .icon-trash {
@@ -134,28 +136,28 @@ h2{
 
 /* --------------TOTAL -------------------- */
 
-.container-total{
+.container-total {
   background-color: #e5a33e;
-  border-top: #000 .1em solid;
+  border-top: #000 0.1em solid;
   display: flex;
   align-items: center;
   justify-content: space-around;
 }
 
-.item-total:nth-child(1){
+.item-total:nth-child(1) {
   text-align: center;
   flex: 2;
   align-items: center;
 }
 
-.item-total:nth-child(2){
+.item-total:nth-child(2) {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 69%;
 }
 
-.item-total > h4{
+.item-total > h4 {
   font-family: 'Oswald', sans-serif;
   color:#fff;
   font-size: 20pt;
@@ -168,35 +170,36 @@ h2{
 
 }
 
-.btn-somar{
-    background-color: #000;
-    color: #fff;
-    font-family: 'Oswald', sans-serif;
-    font-weight: 400;
-    border-radius: 1.5em;
-    padding: 0.5em 1em;
-    font-size: 19pt;
-    letter-spacing: .1em;
-    cursor: pointer;
-    transition: all 0.4s ease-in-out;
-    -webkit-transition: all 0.4s ease-in-out;
-    border: none;
-    outline: none;
-    margin-right: .5em;
+
+.btn-somar {
+  background-color: #000;
+  color: #fff;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 400;
+  border-radius: 1.5em;
+  padding: 0.5em 1em;
+  font-size: 23pt;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  border: none;
+  outline: none;
+  margin-right: 0.5em;
 }
 
-.btn-somar:hover{
+.btn-somar:hover {
   background-color: rgba(0, 0, 0, 0.63);
-  transform: scale(.9);
+  transform: scale(0.9);
 }
 
-.btn-somar> img{
+.btn-somar > img {
   width: 1em;
   height: 1em;
-  margin-right: .5em;
+  margin-right: 0.5em;
 }
 
-.btn-finalizar{
+.btn-finalizar {
   background-color: #3b6204;
   color: #fff;
   font-family: 'Oswald', sans-serif;
@@ -211,31 +214,30 @@ h2{
   outline: none;
 }
 
-.btn-finalizar:hover{
+.btn-finalizar:hover {
   background-color: #568d0a;
-  transform: scale(.9);
+  transform: scale(0.9);
 }
 
-.btn-finalizar> img{
+.btn-finalizar > img {
   width: 1em;
   height: 1em;
-  margin-right: .5em;
+  margin-right: 0.5em;
 }
 
 /* -------------CARDAPIO ------------------------- */
 
-.container-menu{
+.container-menu {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-
 }
 
 /* ------------- DIVS COM ITENS---------------- */
 
-.itens-menu{
+.itens-menu {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -246,15 +248,16 @@ h2{
   width: 7em;
   height: 10em;
   margin:1em
+
 }
 
-.itens-menu> h3{
+.itens-menu > h3 {
   font-family: 'Oswald', sans-serif;
   font-weight: 600;
   font-size: 18pt;
 }
 
-.itens-menu> p{
+.itens-menu > p {
   font-family: 'Open Sans', sans-serif;
   font-size:12pt;
 }
@@ -265,6 +268,7 @@ h2{
   border-radius: 100em;
 }
 
+
 .btn-add-item {
   background-color: #e5a33e;
   font-family: 'Open Sans', sans-serif;
@@ -273,7 +277,7 @@ h2{
   color: black;
   border-radius: 2em;
   margin-bottom: 1em;
-  padding: 0 .5em;
+  padding: 0 0.5em;
   cursor: pointer;
   font-weight: bolder;
   transition: all 0.4s ease-in-out;
@@ -282,7 +286,6 @@ h2{
 }
 
 .btn-add-item:hover {
-  background-color:rgba(240, 232, 235, 0.658); 
-  transform: scale(.9);  
+  background-color: rgba(240, 232, 235, 0.658);
+  transform: scale(0.9);
 }
-
