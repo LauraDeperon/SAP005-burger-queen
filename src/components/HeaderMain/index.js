@@ -18,17 +18,17 @@ function HeaderMain() {
 
   return (
     <header>
-      <section className='header-main'>
-        <div className='item-header'>
-          <img className='logo-main' src={Logo} alt='logo' />
+      <section className="header-main">
+        <div className="item-header">
+          <img className="logo-main" src={Logo} alt="logo" />
           <img
-            className='icon-logout'
+            className="icon-logout"
             src={Logout}
-            alt='icon-logout'
+            alt="icon-logout"
             onClick={handleSignOut}
           />
         </div>
-        <div className='item-header2'>
+        <div className="item-header2">
           <h2>Bem-vindo(a) {user}!</h2>
           <p>Setor: {role}</p>
         </div>

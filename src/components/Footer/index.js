@@ -3,15 +3,15 @@ import '../../Styles/Footer.css';
 
 export default (Footer) => {
   return (
-    <footer className='footer'>
+    <footer className="footer">
       {' '}
       <p>
         Desenvolvido por{' '}
-        <a href='https://github.com/LauraDeperon' target='_blank'>
+        <a href="https://github.com/LauraDeperon" target="_blank">
           Laura
         </a>{' '}
         e{' '}
-        <a href='https://github.com/alencartha' target='_blank'>
+        <a href="https://github.com/alencartha" target="_blank">
           Alencartha
         </a>{' '}
         2021 | © Todos os direitos reservados

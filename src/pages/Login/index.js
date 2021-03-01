@@ -9,7 +9,7 @@ import IconPassword from '../../assets/padlock.png';
 
 function Login() {
   const history = useHistory();
-  
+
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -40,34 +40,34 @@ function Login() {
           history.push('/PedidosAFazer');
         } else {
           // ModalLogin(data.code)
-          alert(`Preencha todos os campos. Erro: ${data.code}`)
+          alert(`Preencha todos os campos. Erro: ${data.code}`);
         }
       });
     });
   };
 
   return (
-    <section className='page-login'>
+    <section className="page-login">
       <Header />
-      <form className='form-login'>
-        <div className='field-login'>
+      <form className="form-login">
+        <div className="field-login">
           <p>E-mail: </p>
-          <div className='input-container'>
-            <img className='icon-user' src={IconUser} alt='icon-user' />
+          <div className="input-container">
+            <img className="icon-user" src={IconUser} alt="icon-user" />
             <input
-              type='email'
-              autoComplete='on'
+              type="email"
+              autoComplete="on"
               value={email}
               onChange={(event) => setEmail(event.target.value)}
             />
           </div>
         </div>
-        <div className='field-login'>
+        <div className="field-login">
           <p>Senha: </p>
-          <div className='input-container'>
-            <img className='icon-user' src={IconPassword} alt='icon-password' />
+          <div className="input-container">
+            <img className="icon-user" src={IconPassword} alt="icon-password" />
             <input
-              type='password'
+              type="password"
               value={password}
               onChange={(event) => setPassword(event.target.value)}
               required
@@ -75,12 +75,12 @@ function Login() {
           </div>
         </div>
       </form>
-      <div className='option-login'>
-        <button className='btn-login' type='submit' onClick={handleSignIn}>
+      <div className="option-login">
+        <button className="btn-login" type="submit" onClick={handleSignIn}>
           ENTRAR
         </button>
         <h3>
-          Ou clique <Link to='/Cadastro'>AQUI</Link> para se cadastrar.
+          Ou clique <Link to="/Cadastro">AQUI</Link> para se cadastrar.
         </h3>
       </div>
       <Footer />
