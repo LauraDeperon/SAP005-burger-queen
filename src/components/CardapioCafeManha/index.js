@@ -1,7 +1,6 @@
 import "../../Styles/CardapioCafeDaManha.css";
 import Trash from "../../assets/trash.png";
-import Check from "../../assets/check.png";
-import Calc from "../../assets/calc.png";
+import Check from "../../assets/check.png"
 import React, { useEffect, useState } from "react";
 import Footer from '../Footer/index.js'
 
@@ -71,7 +70,6 @@ const CardapioCafeManha = () => {
       });
     }
     setOrder({ ...order, products: arrayProdutos });
-    alert(produto.name + ' adicionado!');
   };
 
   useEffect(() => {
@@ -194,7 +192,6 @@ const CardapioCafeManha = () => {
         </div>
 
         <div className="item-total">
-          <button className="btn-somar" onClick={() => handleSomar()}><img src={Calc} />SOMAR</button>
           <button className="btn-finalizar" onClick={() => handleSubmit()}><img src={Check} />ENVIAR PEDIDO</button>
         </div>
 
