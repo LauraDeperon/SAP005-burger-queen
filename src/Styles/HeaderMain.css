@@ -79,21 +79,21 @@
   }
 
   .logo-main {
-    height: 10em;
-    width: 10em;
+    height: 6em;
+    width: 6em;
   }
 
   .icon-logout {
-    height: 5em;
-    width: 5em;
+    height: 3em;
+    width: 3em;
     cursor: pointer;
     transition: all 0.4s ease-in-out;
     -webkit-transition: all 0.4s ease-in-out;
   }
 
   .icon-logout:hover {
-    height: 4.8em;
-    width: 4.8em;
+    height: 2.8em;
+    width: 2.8em;
     opacity: 0.5;
   }
 }
