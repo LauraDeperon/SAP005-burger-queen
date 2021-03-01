@@ -11,8 +11,8 @@ const CardapioCafeManha = () => {
   const [resumoPedido, setResumoPedido] = useState([]);
   const [order, setOrder] = useState({});
   const [produtoExcluído, setProdutoExcluído] = useState([]);
-  const [precoTotal, setPrecoTotal] = useState([]);
-  const [precosProdutos, setPrecosProdutos] = useState([]);
+  const [precoTotal, setPrecoTotal] = useState([0]);
+  const [precosProdutos, setPrecosProdutos] = useState([0]);
 
   useEffect(() => {
     fetch('https://lab-api-bq.herokuapp.com/products', {
@@ -67,19 +67,22 @@ const CardapioCafeManha = () => {
         qtd: value.length,
       });
     }
-
     setOrder({ ...order, products: arrayProdutos });
-    alert(produto.name + 'adicionado!');
+    alert(produto.name + ' adicionado!');
   };
+
+  useEffect(() => {
+    Somar()
+  }, [precosProdutos])
 
   const handleExcluir = (produto) => {
     setPrecoTotal(precosProdutos.splice(resumoPedido.indexOf(produto), 1));
     setProdutoExcluído(resumoPedido.splice(resumoPedido.indexOf(produto), 1));
-    handleSomar();
+    Somar();
   };
 
-  const handleSomar = () => {
-    setPrecoTotal(precosProdutos.reduce((total, num) => total + num));
+  const Somar = () => {
+      setPrecoTotal(precosProdutos.reduce((total, num) => total + num));
   };
 
   const handleSubmit = () => {
@@ -109,7 +112,7 @@ const CardapioCafeManha = () => {
       });
   };
 
-  function clearInput() {
+  const clearInput = () => {
     const inputs = document.querySelectorAll('input');
     [].map.call(inputs, (entrada) => (entrada.value = ''));
   }
@@ -251,9 +254,6 @@ const CardapioCafeManha = () => {
             </th>
             <th className='item-total'>
               <h4>R$ {precoTotal},00</h4>
-            </th>
-            <th>
-              <button onClick={() => handleSomar()}>SOMAR</button>
             </th>
             <th>
               <button onClick={() => handleSubmit()}>FINALIZAR</button>
