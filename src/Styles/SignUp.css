@@ -22,19 +22,18 @@
   margin: 0 auto;
 }
 
-.field-cadastro{
+.field-cadastro {
   margin-bottom: 1em;
-
 }
 
 .input-text {
-    width: 23em;
-    height: 3em;
-    outline: none;
-    border: none;
-    border-radius: 0.5em;
-    font-size: 22pt;
-    margin-left: 1em;
+  width: 23em;
+  height: 3em;
+  outline: none;
+  border: none;
+  border-radius: 0.5em;
+  font-size: 22pt;
+  margin-left: 1em;
 }
 
 .input-radio {
