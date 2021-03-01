@@ -1,11 +1,11 @@
-import "../../Styles/CardapioCafeDaManha.css";
-import Trash from "../../assets/trash.png";
-import Check from "../../assets/check.png"
-import React, { useEffect, useState } from "react";
-import Footer from '../Footer/index.js'
+import '../../Styles/CardapioCafeDaManha.css';
+import Trash from '../../assets/trash.png';
+import Check from '../../assets/check.png';
+import React, { useEffect, useState } from 'react';
+import Footer from '../Footer/index.js';
 
 const CardapioCafeManha = () => {
-  const tokenUser = localStorage.getItem("token");
+  const tokenUser = localStorage.getItem('token');
   const [CardapioCafe, setCardapioCafe] = useState([]);
   const [hamburgueres, setHamburgueres] = useState([]);
   const [acompanhamentos, setAcompanhamentos] = useState([]);
@@ -17,10 +17,10 @@ const CardapioCafeManha = () => {
   const [precosProdutos, setPrecosProdutos] = useState([0]);
 
   useEffect(() => {
-    fetch("https://lab-api-bq.herokuapp.com/products", {
-      method: "GET",
+    fetch('https://lab-api-bq.herokuapp.com/products', {
+      method: 'GET',
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
         Authorization: `${tokenUser}`,
       },
     })
@@ -28,19 +28,19 @@ const CardapioCafeManha = () => {
       .then((data) => {
         const products = data;
         const produtosCafe = products.filter((itens) =>
-          itens.type.includes("breakfast")
+          itens.type.includes('breakfast')
         );
         setCardapioCafe(produtosCafe);
         const hamburgueres = products.filter((itens) =>
-          itens.sub_type.includes("hamburguer")
+          itens.sub_type.includes('hamburguer')
         );
         setHamburgueres(hamburgueres);
         const acompanhamentos = products.filter((itens) =>
-          itens.sub_type.includes("side")
+          itens.sub_type.includes('side')
         );
         setAcompanhamentos(acompanhamentos);
         const bebidas = products.filter((itens) =>
-          itens.sub_type.includes("drinks")
+          itens.sub_type.includes('drinks')
         );
         setBebidas(bebidas);
       });
@@ -73,8 +73,8 @@ const CardapioCafeManha = () => {
   };
 
   useEffect(() => {
-    Somar()
-  }, [precosProdutos])
+    Somar();
+  }, [precosProdutos]);
 
   const handleExcluir = (produto) => {
     setPrecoTotal(precosProdutos.splice(resumoPedido.indexOf(produto), 1));
@@ -87,50 +87,45 @@ const CardapioCafeManha = () => {
   };
 
   const handleSubmit = () => {
-    fetch("https://lab-api-bq.herokuapp.com/orders", {
-      method: "POST",
+    fetch('https://lab-api-bq.herokuapp.com/orders', {
+      method: 'POST',
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
         Authorization: `${tokenUser}`,
       },
       body: JSON.stringify(order),
     })
       .then((response) => {
-        response.json().then((data) => {
-          console.log(data);
+        response.json().then(() => {
           setOrder({});
           setResumoPedido([]);
           setPrecoTotal([]);
           setPrecosProdutos([]);
           setProdutoExcluído([]);
           clearInput();
-          alert("Pedido Criado com Sucesso!");
+          alert('Pedido Criado com Sucesso!');
         });
       })
       .catch(() => {
-        alert("Preencha todos os campos!");
+        alert('Preencha todos os campos!');
       });
   };
 
   const clearInput = () => {
-    const inputs = document.querySelectorAll("input");
-    [].map.call(inputs, (entrada) => (entrada.value = ""));
-  }
+    const inputs = document.querySelectorAll('input');
+    [].map.call(inputs, (entrada) => (entrada.value = ''));
+  };
 
   return (
-
     <div className="main">
-
       <section className="order-info">
-
         <div className="info-client">
-
           <label>
             Nome do cliente:
             <input
-              type='text'
-              name='nome'
-              className='input'
+              type="text"
+              name="nome"
+              className="input"
               required
               onChange={(event) =>
                 setOrder({ ...order, client: event.target.value })
@@ -141,30 +136,39 @@ const CardapioCafeManha = () => {
           <label>
             Mesa:
             <input
-              type='text'
-              name='mesa'
-              className='input'
+              type="text"
+              name="mesa"
+              className="input"
               required
               onChange={(event) =>
                 setOrder({ ...order, table: event.target.value })
               }
             />
           </label>
-
         </div>
 
-        <div className='container-resum'>
-
+        <div className="container-resum">
           <h2>Resumo do Pedido</h2>
           <div className="resum-itens">
-
             {resumoPedido.map((produto, index) => (
               <div className="details-order" key={index}>
-                <p><b>Produto:</b> {produto.name}</p>
-                <p><b>Quantidade:</b> 1</p>
-                <p><b>Complemento:</b>{produto.flavor === "null" ? "" : produto.flavor}</p>
-                <p><b>Adicionais:</b>{produto.complement === "null" ? "" : produto.complement}</p>
-                <p><b>Valor:</b>R$ {produto.price},00</p>
+                <p>
+                  <b>Produto:</b>.{produto.name}
+                </p>
+                <p>
+                  <b>Quantidade:</b> 1
+                </p>
+                <p>
+                  <b>Complemento:</b>
+                  {produto.flavor === 'null' ? '' : produto.flavor}
+                </p>
+                <p>
+                  <b>Adicionais:</b>
+                  {produto.complement === 'null' ? '' : produto.complement}
+                </p>
+                <p>
+                  <b>Valor:</b>R$ {produto.price},00
+                </p>
 
                 <div>
                   <button className="btn-delete">
@@ -176,40 +180,40 @@ const CardapioCafeManha = () => {
                     />
                   </button>
                 </div>
-
               </div>
             ))}
           </div>
-
         </div>
-
       </section>
 
       <section className="container-total">
-
         <div className="item-total">
           <h4>Total: R$ {precoTotal},00</h4>
         </div>
 
         <div className="item-total">
-          <button className="btn-finalizar" onClick={() => handleSubmit()}><img src={Check} />ENVIAR PEDIDO</button>
+          <button className="btn-finalizar" onClick={() => handleSubmit()}>
+            <img src={Check} />
+            ENVIAR PEDIDO
+          </button>
         </div>
-
       </section>
 
       <h2>CAFÉ DA MANHÃ:</h2>
 
       <section className="container-menu">
         {CardapioCafe.map((produto) => (
-
           <div className="itens-menu" key={produto.id}>
-
             <h3>{produto.name}</h3>
             <img src={produto.image} />
             <p>Preço: R$ {produto.price},00</p>
-            <button className='btn-add-item' onClick={() => handleAdicionar(produto)}>+</button>
+            <button
+              className="btn-add-item"
+              onClick={() => handleAdicionar(produto)}
+            >
+              +
+            </button>
           </div>
-
         ))}
       </section>
 
@@ -217,17 +221,22 @@ const CardapioCafeManha = () => {
 
       <section className="container-menu">
         {hamburgueres.map((produto) => (
-
           <div className="itens-menu" key={produto.id}>
-
-            <h3>{produto.name + " " + produto.flavor}</h3>
+            <h3>{produto.name + ' ' + produto.flavor}</h3>
             <img src={produto.image} />
             <p>Categoria: {produto.name}</p>
-            <p>Adicional: {produto.complement === "null" ? "" : produto.complement}</p>
+            <p>
+              Adicional:{' '}
+              {produto.complement === 'null' ? '' : produto.complement}
+            </p>
             <p>Preço: R$ {produto.price},00</p>
-            <button className='btn-add-item' onClick={() => handleAdicionar(produto)}>+</button>
+            <button
+              className="btn-add-item"
+              onClick={() => handleAdicionar(produto)}
+            >
+              +
+            </button>
           </div>
-
         ))}
       </section>
 
@@ -235,16 +244,18 @@ const CardapioCafeManha = () => {
 
       <section className="container-menu">
         {acompanhamentos.map((produto) => (
-
           <div className="itens-menu" key={produto.id}>
-
             <h3>{produto.name}</h3>
             <img src={produto.image} />
             <p>Categoria: {produto.name}</p>
             <p>Preço: R$ {produto.price},00</p>
-            <button className='btn-add-item' onClick={() => handleAdicionar(produto)}>+</button>
+            <button
+              className="btn-add-item"
+              onClick={() => handleAdicionar(produto)}
+            >
+              +
+            </button>
           </div>
-
         ))}
       </section>
 
@@ -252,20 +263,21 @@ const CardapioCafeManha = () => {
 
       <section className="container-menu">
         {bebidas.map((produto) => (
-
           <div className="itens-menu" key={produto.id}>
-
             <h3>{produto.name}</h3>
             <img src={produto.image} />
             <p>Preço: R$ {produto.price},00</p>
-            <button className='btn-add-item' onClick={() => handleAdicionar(produto)}>+</button>
+            <button
+              className="btn-add-item"
+              onClick={() => handleAdicionar(produto)}
+            >
+              +
+            </button>
           </div>
-
         ))}
       </section>
 
       <Footer />
-
     </div>
   );
 };

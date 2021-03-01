@@ -6,10 +6,10 @@ function ModalLogin(message) {
 
   return (
 
-    <section className="modalDialog">
+    <section className='modalDialog'>
 
       <div>
-        <a title="Fechar"></a>
+        <a title='Fechar'></a>
       </div>  
 
       <div>
