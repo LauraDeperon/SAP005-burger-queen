@@ -27,46 +27,54 @@ const FormCadastro = () => {
 
   return (
     <form className='form-cadastro'>
-      <label>
-        Nome:
-        <input
-          type='text'
-          name='nome'
-          className='input-text'
-          required
-          onChange={(event) =>
-            setUser({ ...userInfo, name: event.target.value })
-          }
-        />
-      </label>
 
-      <label>
-        E-mail:
+      <div className="field-cadastro">
+        <label>
+          Nome:
         <input
-          type='text'
-          name='email'
-          className='input-text'
-          required
-          onChange={(event) =>
-            setUser({ ...userInfo, email: event.target.value })
-          }
-        />
-      </label>
+            type='text'
+            name='nome'
+            className='input-text'
+            required
+            onChange={(event) =>
+              setUser({ ...userInfo, name: event.target.value })
+            }
+          />
+        </label>
+      </div>
 
-      <label>
-        Senha:
+      <div className="field-cadastro">
+        <label>
+          E-mail:
         <input
-          type='password'
-          name='senha'
-          className='input-text'
-          required
-          onChange={(event) =>
-            setUser({ ...userInfo, password: event.target.value })
-          }
-        />
-      </label>
+            type='text'
+            name='email'
+            className='input-text'
+            required
+            onChange={(event) =>
+              setUser({ ...userInfo, email: event.target.value })
+            }
+          />
+        </label>
+      </div>
+
+      <div className="field-cadastro">
+        <label>
+          Senha:
+        <input
+            type='password'
+            name='senha'
+            className='input-text'
+            required
+            onChange={(event) =>
+              setUser({ ...userInfo, password: event.target.value })
+            }
+          />
+        </label>
+      </div>
 
       <section className='option-setor'>
+
         <label>
           <input
             type='radio'
@@ -94,6 +102,7 @@ const FormCadastro = () => {
           />
           Salão
         </label>
+        
       </section>
 
       <button

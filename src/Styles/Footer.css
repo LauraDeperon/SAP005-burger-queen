@@ -8,13 +8,13 @@
   text-align: center;
   letter-spacing: 0.2px;
   margin-top: 1em;
-  font-family: 'Open Sans', sans-serif;
   color: #fff;
   font-weight: 100;
 }
 
 .footer > p {
-  padding-top: 0em;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14pt;
 }
 
 .footer > p > a {
@@ -30,10 +30,4 @@
   padding: 0.2em;
   font-size: 12pt;
   color: #e4a240;
-}
-
-@media only screen and (min-width: 1024px) {
-  .footer > p {
-    padding-top: 7em;
-  }
 }

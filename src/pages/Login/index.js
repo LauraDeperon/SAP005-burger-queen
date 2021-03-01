@@ -5,10 +5,11 @@ import Footer from '../../components/Footer/index.js';
 import Header from '../../components/HeaderLogin/index.js';
 import IconUser from '../../assets/user.png';
 import IconPassword from '../../assets/padlock.png';
+// import ModalLogin from '../../components/Modals/ModalLogin/index.js';
 
 function Login() {
   const history = useHistory();
-
+  
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -38,7 +39,8 @@ function Login() {
           localStorage.setItem('role', role);
           history.push('/PedidosAFazer');
         } else {
-          alert('Preencha os campos corretamente!');
+          // ModalLogin(data.code)
+          alert(`Preencha todos os campos. Erro: ${data.code}`)
         }
       });
     });
