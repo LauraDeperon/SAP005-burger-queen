@@ -21,16 +21,16 @@ function HeaderMain() {
       <section className="header-main">
         <div className="item-header">
           <img className="logo-main" src={Logo} alt="logo" />
+          <div className="item-header2">
+            <h2>Bem-vindo(a) {user}!</h2>
+            <p>Setor: {role}</p>
+          </div>
           <img
             className="icon-logout"
             src={Logout}
             alt="icon-logout"
             onClick={handleSignOut}
           />
-        </div>
-        <div className="item-header2">
-          <h2>Bem-vindo(a) {user}!</h2>
-          <p>Setor: {role}</p>
         </div>
       </section>
     </header>
