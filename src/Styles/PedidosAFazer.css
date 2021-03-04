@@ -124,3 +124,29 @@ tr > th {
 .btn-finish {
   background-color: #54860e;
 }
+
+.btn-atualizar {
+  background-color: #3b6204;
+  color: #fff;
+  font-family: 'Oswald', sans-serif;
+  border-radius: 1.5em;
+  padding: 0.5em 1em;
+  font-size: 19pt;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  border: none;
+  outline: none;
+}
+
+.btn-atualizar:hover {
+  background-color: #568d0a;
+  transform: scale(0.9);
+}
+
+.btn-atualizar > img {
+  width: 1em;
+  height: 1em;
+  margin-right: 0.5em;
+}
