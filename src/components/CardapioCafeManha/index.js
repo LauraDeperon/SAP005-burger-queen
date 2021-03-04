@@ -249,7 +249,7 @@ const CardapioCafeManha = () => {
 
       <h2>BEBIDAS:</h2>
 
-      <section className="container-menu">
+      <section className="container-menu container-bebidas">
         {bebidas.map((produto) => (
           <div className="itens-menu" key={produto.id}>
             <h3>{produto.name}</h3>
@@ -264,8 +264,6 @@ const CardapioCafeManha = () => {
           </div>
         ))}
       </section>
-
-      <Footer />
     </div>
   );
 };
