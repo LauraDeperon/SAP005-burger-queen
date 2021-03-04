@@ -102,16 +102,16 @@ function ListaPedidosPendentes() {
                   </p>
                   <p>{itens.flavor === 'null' ? '' : itens.flavor}</p>
                   <p>{itens.complement === 'null' ? '' : itens.complement}</p>
-                  <button
-                    className="btn-preparar"
-                    onClick={(e) => handlePreparar(pedido, e)}
-                  >
-                    PREPARAR
-                  </button>
                 </div>
               ))}
             </section>
             <div>
+              <button
+                className="btn-preparar"
+                onClick={(e) => handlePreparar(pedido, e)}
+              >
+                PREPARAR
+              </button>
               <button
                 className="btn-finalizar"
                 onClick={() => handleFinalizar(pedido)}
