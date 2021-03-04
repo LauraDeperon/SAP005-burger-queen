@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import IconRefresh from '../../assets/atualizar.png';
+import '../../Styles/ListaPedidosPendentes.css';
 
 function ListaPedidosPendentes() {
   const tokenUser = localStorage.getItem('token');
@@ -70,58 +72,57 @@ function ListaPedidosPendentes() {
   };
 
   return (
-    <div>
-      <button onClick={() => handleAtualizar()}>Atualizar Pedidos</button>
+    <main className="page">
+      <button className="btn-refresh" onClick={() => handleAtualizar()}>
+        <img alt="icone-atualizar" src={IconRefresh} />
+        Atualizar Pedidos
+      </button>
       {PedidosAFazer.map((pedido) => {
         return (
-          <table key={pedido.id}>
-            <tbody>
-              <tr>
-                <th>Pedido nº {pedido.id}</th>
-                <th>Cliente: {pedido.client_name}</th>
-                <th>Mesa: {pedido.table}</th>
-                <th>
-                  Status:
-                  {pedido.status
-                    .replace('pending', 'Pendente')
-                    .replace('preparing', 'Preparando')}
-                </th>
-              </tr>
-              <tr>
-                <th>Qtde</th>
-                <th>Ítem</th>
-                <th>Complemento</th>
-                <th>Adicionais</th>
-              </tr>
-
+          <section className="container-pending" key={pedido.id}>
+            <div className="details-client">
+              <p>Pedido nº {pedido.id}</p>
+              <p>Mesa: {pedido.table}</p>
+              <p>Cliente: {pedido.client_name}</p>
+            </div>
+            <div className="details-status">
+              <h2>STATUS: </h2>
+              <h2>
+                {pedido.status
+                  .replace('pending', 'Pendente')
+                  .replace('preparing', 'Preparando')}
+              </h2>
+            </div>
+            <section className="container-order">
               {pedido.Products.map((itens, index) => (
-                <tr key={index}>
-                  <td>{itens.qtd}</td>
-                  <td>{itens.name}</td>
-                  <td>{itens.flavor === 'null' ? '' : itens.flavor}</td>
-                  <td>{itens.complement === 'null' ? '' : itens.complement}</td>
-                </tr>
+                <div className="details-order-pending" key={index}>
+                  <p>
+                    {' '}
+                    {itens.qtd} {itens.name}
+                  </p>
+                  <p>{itens.flavor === 'null' ? '' : itens.flavor}</p>
+                  <p>{itens.complement === 'null' ? '' : itens.complement}</p>
+                </div>
               ))}
-              <tr>
-                <th>
-                  <button
-                    className="btn-preparar"
-                    onClick={(e) => handlePreparar(pedido, e)}
-                  >
-                    PREPARAR
-                  </button>
-                </th>
-                <th>
-                  <button onClick={() => handleFinalizar(pedido)}>
-                    FINALIZAR
-                  </button>
-                </th>
-              </tr>
-            </tbody>
-          </table>
+            </section>
+            <div>
+              <button
+                className="btn-preparar"
+                onClick={(e) => handlePreparar(pedido, e)}
+              >
+                PREPARAR
+              </button>
+              <button
+                className="btn-finalizar"
+                onClick={() => handleFinalizar(pedido)}
+              >
+                FINALIZAR
+              </button>
+            </div>
+          </section>
         );
       })}
-    </div>
+    </main>
   );
 }
 
