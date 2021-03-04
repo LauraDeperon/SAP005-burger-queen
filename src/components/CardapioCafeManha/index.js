@@ -117,86 +117,78 @@ const CardapioCafeManha = () => {
   };
 
   return (
-    <div className="main">
-      <section className="order-info">
-        <div className="info-client">
-          <label>
-            Nome do cliente:
-            <input
-              type="text"
-              name="nome"
-              className="input"
-              required
-              onChange={(event) =>
-                setOrder({ ...order, client: event.target.value })
-              }
-            />
-          </label>
+    <div>
+      <section className="fixed-container">
+        <section className="order-info">
+          <div className="info-client">
+            <label>
+              Cliente:
+              <input
+                type="text"
+                name="nome"
+                className="input"
+                required
+                onChange={(event) =>
+                  setOrder({ ...order, client: event.target.value })
+                }
+              />
+            </label>
 
-          <label>
-            Mesa:
-            <input
-              type="text"
-              name="mesa"
-              className="input"
-              required
-              onChange={(event) =>
-                setOrder({ ...order, table: event.target.value })
-              }
-            />
-          </label>
-        </div>
-
-        <div className="container-resum">
-          <h2>Resumo do Pedido</h2>
-          <div className="resum-itens">
-            {resumoPedido.map((produto, index) => (
-              <div className="details-order" key={index}>
-                <p>
-                  <b>Produto:</b>.{produto.name}
-                </p>
-                <p>
-                  <b>Quantidade:</b> 1
-                </p>
-                <p>
-                  <b>Complemento:</b>
-                  {produto.flavor === 'null' ? '' : produto.flavor}
-                </p>
-                <p>
-                  <b>Adicionais:</b>
-                  {produto.complement === 'null' ? '' : produto.complement}
-                </p>
-                <p>
-                  <b>Valor:</b>R$ {produto.price},00
-                </p>
-
-                <div>
-                  <button className="btn-delete">
-                    <img
-                      className="icon-trash"
-                      src={Trash}
-                      alt="icon-trash"
-                      onClick={() => handleExcluir(produto)}
-                    />
-                  </button>
-                </div>
-              </div>
-            ))}
+            <label>
+              Mesa:
+              <input
+                type="text"
+                name="mesa"
+                className="input"
+                required
+                onChange={(event) =>
+                  setOrder({ ...order, table: event.target.value })
+                }
+              />
+            </label>
           </div>
-        </div>
-      </section>
 
-      <section className="container-total">
-        <div className="item-total">
-          <h4>Total: R$ {precoTotal},00</h4>
-        </div>
+          <div className="container-resum">
+            <h2>Resumo do Pedido</h2>
+            <div className="resum-itens">
+              {resumoPedido.map((produto, index) => (
+                <div className="details-order" key={index}>
+                  <p>1</p>
+                  <p>{produto.name}</p>
+                  <p>{produto.flavor === 'null' ? '' : produto.flavor}</p>
+                  <p>
+                    {produto.complement === 'null' ? '' : produto.complement}
+                  </p>
+                  <p>R$ {produto.price},00</p>
 
-        <div className="item-total">
-          <button className="btn-finalizar" onClick={() => handleSubmit()}>
-            <img src={Check} />
-            ENVIAR PEDIDO
-          </button>
-        </div>
+                  <div>
+                    <button className="btn-delete">
+                      <img
+                        className="icon-trash"
+                        src={Trash}
+                        alt="icon-trash"
+                        onClick={() => handleExcluir(produto)}
+                      />
+                    </button>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="container-total">
+          <div className="item-total">
+            <h4>R$ {precoTotal},00</h4>
+          </div>
+
+          <div className="item-total">
+            <button className="btn-finalizar" onClick={() => handleSubmit()}>
+              <img src={Check} />
+              ENVIAR PEDIDO
+            </button>
+          </div>
+        </section>
       </section>
 
       <h2>CAFÉ DA MANHÃ:</h2>
@@ -206,7 +198,7 @@ const CardapioCafeManha = () => {
           <div className="itens-menu" key={produto.id}>
             <h3>{produto.name}</h3>
             <img src={produto.image} />
-            <p>Preço: R$ {produto.price},00</p>
+            <p>R$ {produto.price},00</p>
             <button
               className="btn-add-item"
               onClick={() => handleAdicionar(produto)}
@@ -222,14 +214,11 @@ const CardapioCafeManha = () => {
       <section className="container-menu">
         {hamburgueres.map((produto) => (
           <div className="itens-menu" key={produto.id}>
-            <h3>{produto.name + ' ' + produto.flavor}</h3>
+            <h3>{produto.name}</h3>
             <img src={produto.image} />
-            <p>Categoria: {produto.name}</p>
-            <p>
-              Adicional:{' '}
-              {produto.complement === 'null' ? '' : produto.complement}
-            </p>
-            <p>Preço: R$ {produto.price},00</p>
+            <p>{produto.flavor}</p>
+            <p>{produto.complement === 'null' ? '' : produto.complement}</p>
+            <p>R$ {produto.price},00</p>
             <button
               className="btn-add-item"
               onClick={() => handleAdicionar(produto)}
@@ -247,8 +236,7 @@ const CardapioCafeManha = () => {
           <div className="itens-menu" key={produto.id}>
             <h3>{produto.name}</h3>
             <img src={produto.image} />
-            <p>Categoria: {produto.name}</p>
-            <p>Preço: R$ {produto.price},00</p>
+            <p>R$ {produto.price},00</p>
             <button
               className="btn-add-item"
               onClick={() => handleAdicionar(produto)}
@@ -266,7 +254,7 @@ const CardapioCafeManha = () => {
           <div className="itens-menu" key={produto.id}>
             <h3>{produto.name}</h3>
             <img src={produto.image} />
-            <p>Preço: R$ {produto.price},00</p>
+            <p>R$ {produto.price},00</p>
             <button
               className="btn-add-item"
               onClick={() => handleAdicionar(produto)}

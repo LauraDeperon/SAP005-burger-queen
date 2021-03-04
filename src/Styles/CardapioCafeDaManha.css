@@ -15,28 +15,32 @@ body {
 
 h2 {
   font-family: 'Oswald', sans-serif;
-  font-size:27pt;
+  font-size: 27pt;
   text-align: center;
-  letter-spacing: .1em;
-  margin-top:2em
+  letter-spacing: 0.1em;
+  margin-top: 2em;
+}
+
+.fixed-container {
+  position: fixed;
+  width: 100%;
+  margin-top: 41%;
 }
 
 .order-info {
   background-color: #e5a33e;
   display: flex;
-  justify-content: space-around;
-  padding: 1em;
-  align-items: center;
+  padding: 0.5em;
+  flex-direction: column;
+  height: 5em;
 }
 
 /* ------------------INFORMAÇÕES CLIENTE------------------- */
 
 .info-client {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  flex: 2;
 }
 
 .info-client > label {
@@ -47,74 +51,71 @@ h2 {
   margin-bottom: 1em;
   color: #000;
   display: flex;
-  flex-direction: column;
+  flex-direction: wrap;
 }
 
-.info-client > label > input{
+.info-client > label > input {
   height: 2em;
   width: 14em;
-  border-radius: .5em;
-
+  border-radius: 0.5em;
+  margin: 0 1em;
 }
 
 /* -------RESUMO PEDIDO ---------- */
 
 .container-resum {
-  margin-top: 1em;
-  flex:3;
+  flex: 3 1;
   background-color: rgba(0, 0, 0, 0.233);
-  text-align: center; 
-  overflow-x: scroll; 
-  border-radius: .2em;
-  height: 10em;
+  overflow-y: scroll;
+  border-radius: 0.2em;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+  width: 80%;
+  margin: 0 auto;
 }
 
 .container-resum > h2 {
   font-family: 'Oswald', sans-serif;
-  color:#000;
-  font-size: 22pt;
+  color: #000;
+  font-size: 15pt;
   font-weight: 800;
-   margin-top: 1em;
+  margin-top: 0em;
 }
-
 
 .resum-itens {
   display: flex;
-  align-items: center;
-  flex-grow: initial;
   font-family: 'Open Sans', sans-serif;
   font-weight: 500;
   font-size: 18pt;
-  letter-spacing: 2px;
-  padding-right: 3em;
   text-align: start;
+  flex-direction: column;
+  text-transform: capitalize;
 }
 
 .details-order {
   display: flex;
   align-items: center;
-  text-align: center;
-  flex-direction: column;
-  align-content: center;
-  background-color: #F2CC91;
-  padding: .4em;
-  border-radius: .2em;
-  margin: .5em
+  background-color: #f2cc91;
+  border-radius: 0.2em;
+  margin: 0.1em;
+  width: 18em;
+  justify-content: space-between;
+  padding: 0 1em;
 }
 
-.details-order > p{
+.details-order > p {
   font-size: 12px;
   color: #000;
-  line-height:12px;
-  
 }
 
 .btn-delete {
   background-color: #000;
   cursor: pointer;
   border-radius: 2em;
-  padding: .2em;
-  border:none;
+  padding: 0.2em;
+  border: none;
   outline: none;
   transition: all 0.4s ease-in-out;
   -webkit-transition: all 0.4s ease-in-out;
@@ -159,44 +160,13 @@ h2 {
 
 .item-total > h4 {
   font-family: 'Oswald', sans-serif;
-  color:#fff;
-  font-size: 20pt;
-  margin-left:1.5em;
-  padding: .2em;
-  letter-spacing: .1em;
-  font-weight: 900;
-  border-radius: .5em;
-  background-color:#000;  
-
-}
-
-
-.btn-somar {
-  background-color: #000;
   color: #fff;
-  font-family: 'Oswald', sans-serif;
-  font-weight: 400;
-  border-radius: 1.5em;
-  padding: 0.5em 1em;
-  font-size: 23pt;
+  font-size: 20pt;
+  margin-left: 1.5em;
   letter-spacing: 0.1em;
-  cursor: pointer;
-  transition: all 0.4s ease-in-out;
-  -webkit-transition: all 0.4s ease-in-out;
-  border: none;
-  outline: none;
-  margin-right: 0.5em;
-}
-
-.btn-somar:hover {
-  background-color: rgba(0, 0, 0, 0.63);
-  transform: scale(0.9);
-}
-
-.btn-somar > img {
-  width: 1em;
-  height: 1em;
-  margin-right: 0.5em;
+  font-weight: 900;
+  border-radius: 0.5em;
+  background-color: #000;
 }
 
 .btn-finalizar {
@@ -229,8 +199,7 @@ h2 {
 
 .container-menu {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  flex-flow: row wrap;
   align-items: center;
   justify-content: center;
 }
@@ -240,34 +209,32 @@ h2 {
 .itens-menu {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
-  border: double .1em;
+  border: solid 0.1em;
   border-color: #e5a33e;
-  border-radius: .5em;
-  width: 7em;
-  height: 10em;
-  margin:1em
-
+  border-radius: 0.5em;
+  width: 4em;
+  height: 9em;
+  margin: 0.05em;
 }
 
 .itens-menu > h3 {
   font-family: 'Oswald', sans-serif;
   font-weight: 600;
-  font-size: 18pt;
+  font-size: 13pt;
 }
 
 .itens-menu > p {
   font-family: 'Open Sans', sans-serif;
-  font-size:12pt;
+  font-size: 12pt;
 }
 
-.itens-menu > img{
-  width: 3em;
-  height: 3em;
+.itens-menu > img {
+  width: 2em;
+  height: 2em;
   border-radius: 100em;
 }
-
 
 .btn-add-item {
   background-color: #e5a33e;
