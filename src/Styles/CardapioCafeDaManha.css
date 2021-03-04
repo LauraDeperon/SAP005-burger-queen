@@ -15,7 +15,7 @@ body {
 
 h2 {
   font-family: 'Oswald', sans-serif;
-  font-size: 27pt;
+  font-size: 20pt;
   text-align: center;
   letter-spacing: 0.1em;
   margin-top: 2em;
@@ -24,7 +24,7 @@ h2 {
 .fixed-container {
   position: fixed;
   width: 100%;
-  margin-top: 41%;
+  margin-top: 45%;
 }
 
 .order-info {
@@ -202,6 +202,10 @@ h2 {
   flex-flow: row wrap;
   align-items: center;
   justify-content: center;
+}
+
+.container-bebidas{
+  margin-bottom: 10em;
 }
 
 /* ------------- DIVS COM ITENS---------------- */
