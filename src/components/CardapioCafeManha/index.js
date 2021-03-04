@@ -2,7 +2,6 @@ import '../../Styles/CardapioCafeDaManha.css';
 import Trash from '../../assets/trash.png';
 import Check from '../../assets/check.png';
 import React, { useEffect, useState } from 'react';
-import Footer from '../Footer/index.js';
 
 const CardapioCafeManha = () => {
   const tokenUser = localStorage.getItem('token');
@@ -99,8 +98,8 @@ const CardapioCafeManha = () => {
         response.json().then(() => {
           setOrder({});
           setResumoPedido([]);
-          setPrecoTotal([]);
-          setPrecosProdutos([]);
+          setPrecoTotal([0]);
+          setPrecosProdutos([0]);
           setProdutoExcluído([]);
           clearInput();
           alert('Pedido Criado com Sucesso!');

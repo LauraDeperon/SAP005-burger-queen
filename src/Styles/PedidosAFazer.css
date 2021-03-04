@@ -1,11 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 
+main{
+  width: 100vw;
+  margin: 0 auto;
+}
 .container-description {
   display: flex;
   justify-content: center;
   align-items: baseline;
-  margin-top: -1.5em;
+  margin-top: .1em;
 }
 
 .icon-order {
@@ -16,7 +20,7 @@
 .container-description > h2 {
   font-family: 'Oswald', sans-serif;
   font-weight: 300;
-  font-size: 25pt;
+  font-size: 20pt;
 }
 
 .orders {
