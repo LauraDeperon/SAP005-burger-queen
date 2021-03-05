@@ -5,8 +5,9 @@
 
 * [1. Introdução](#1-Introdução)
 * [2. Processo de Desenvolvimento da Aplicação](#2-processo-de-desenvolvimento-da-aplicação)
-* [3. Tecnologias Utilizadas](#3-tecnologias-utilizadas)
-* [4. Desenvolvedoras](#4-desenvolvedoras)
+* [3. Protótipo](#3-protótipo)
+* [4. Tecnologias Utilizadas](#4-tecnologias-utilizadas)
+* [5. Desenvolvedoras](#5-desenvolvedoras)
 
 ***
 
@@ -18,6 +19,7 @@ O Burger Beef é um projeto 100% por demanda. Neste projeto solucionamos o segui
 
 O ponto de partida para desenvolvermos o Burger Beef foram as Histórias de Usuário que irão utilizar a aplicação. Levando em consideração todo o fluxo dos atores envolvidos no processo, elaboramos o planejamento no Trello e, tendo como base a Metodologia Ágil (Scrum), organizamos as entregas de cada História de Usuário por meio de Sprints. São Histórias do Usuário: 
 
+
 ### História de usuário 1 - Usuário deve ter seu perfil (login/senha) para acessar o sistema.
 
 "Eu como funcionário do restaurante quero entrar na plataforma e ver apenas a tela importante para o meu trabalho."
@@ -27,6 +29,7 @@ Critérios de aceitação:
 - Criar login e senha.
 - Registar tipo de usuário (cozinha / salão), login e senha.
 - Entrar na tela correta para cada usuário.
+
 
 ### História de usuário 2 - Garçom/Garçonete deve poder anotar o seu pedido.
 
@@ -93,7 +96,7 @@ Critérios de aceitação:
 #### Deploy:
 - Vercel.
 
-## 4. Desenvolvedoras:
+## 5. Desenvolvedoras:
 
 - [Laura Deperon](https://github.com/LauraDeperon)
 - [Thaís Alencar](https://github.com/alencartha)
