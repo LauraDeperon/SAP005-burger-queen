@@ -16,7 +16,7 @@ O Burger Beef é um projeto 100% por demanda. Neste projeto solucionamos o segui
 
 ## 2. Processo de Desenvolvimento da Aplicação:
 
-O ponto de partida para desenvolvermos o Burger Beef foram as Histórias de Usuário que irão utilizar a aplicação. Levando em consideração todo o fluxo dos atores envolvidos no processo, elaboramos o planejamento no Trello e tendo como base a Metodologia Ágil (Scrum). Nesse sentido, organizamos as entregas de cada História de Usuário por meio de Sprints. São Histórias do Usuário: 
+O ponto de partida para desenvolvermos o Burger Beef foram as Histórias de Usuário que irão utilizar a aplicação. Levando em consideração todo o fluxo dos atores envolvidos no processo, elaboramos o planejamento no Trello e, tendo como base a Metodologia Ágil (Scrum), organizamos as entregas de cada História de Usuário por meio de Sprints. São Histórias do Usuário: 
 
 ### História de usuário 1 - Usuário deve ter seu perfil (login/senha) para acessar o sistema.
 
