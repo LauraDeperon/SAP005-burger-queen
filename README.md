@@ -30,6 +30,8 @@ Critérios de aceitação:
 
 ### História de usuário 2 - Garçom/Garçonete deve poder anotar o seu pedido.
 
+![GIF-Historia1]()
+
 "Eu como garçom/garçonete quero poder anotar o meu pedido saber o valor de cada produto e poder enviar o pedido para a cozinha para ser preparado."
 
 Critérios de aceitação:
@@ -41,6 +43,8 @@ Critérios de aceitação:
 - Enviar o pedido para a cozinha (guardar em algum banco de dados).
 - Funcionar bem e se adequar a um tablet.
 
+![GIF-Historia2]()
+
 ### História de usuário 3 - Chefe de cozinha deve ver os pedidos.
 
 "Eu como chefe de cozinha quero ver os pedidos dos clientes em ordem, poder marcar que estão prontos e poder notificar os garçons/garçonetes que o pedido está pronto para ser entregue ao cliente."
@@ -49,6 +53,8 @@ Critérios de aceitação:
 - Ver os pedidos à medida em que são feitos.
 - Marcar os pedidos que foram preparados e estão prontos para serem servidos.
 - Ver o tempo que levou para preparar o pedido desde que chegou, até ser marcado como concluído.
+
+![GIF-Historia3]()
 
 ### História de usuário 4 - Garçom/Garçonete deve ver os pedidos prontos para servir.
 
@@ -59,6 +65,8 @@ Critérios de aceitação:
 - Marque os pedidos que foram entregues.
 - Definição de pronto
 - Os dados devem ser mantidos intactos, mesmo depois que um pedido foi terminado. Tudo isso para poder ter estatísticas no futuro.
+
+![GIF-Historia4]()
 
 ## 3. Tecnologias Utilizadas:
 
