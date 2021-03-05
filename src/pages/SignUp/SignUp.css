@@ -8,3 +8,82 @@
   color: #000;
   font-weight: bolder;
 }
+
+.form-cadastro {
+  background-color: #e4a240;
+  border-radius: 0.5em;
+  padding: 1.5em 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  width: 60%;
+  margin: 0 auto;
+}
+
+.field-cadastro {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0.5em;
+}
+
+label {
+  font-size: 21pt;
+  font-weight: 600;
+  color: #000;
+}
+
+.input-text {
+  width: 60%;
+  height: 1.5em;
+  outline: none;
+  border: none;
+  border-radius: 0.5em;
+  font-size: 15pt;
+  margin-left: 1em;
+  margin-bottom: 1em;
+}
+
+.input-radio {
+  width: 30px;
+  height: 30px;
+  margin-right: 1em;
+}
+
+.option-setor {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-around;
+  width: 50%;
+}
+
+:link {
+  text-decoration: none;
+}
+
+.btn-cadastrar {
+  background-color: #3b6204;
+  color: #fff;
+  font-family: 'Oswald', sans-serif;
+  border-radius: 1.5em;
+  padding: 0.5em 3em;
+  font-size: 19pt;
+  cursor: pointer;
+  box-shadow: 4px 1px 4px 0 rgba(240, 235, 235, 0.16);
+  -webkit-box-shadow: 3px 3px 3px 0 rgba(136, 136, 136, 0.16);
+  transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  border: none;
+  margin-top: 1em;
+}
+
+.btn-cadastrar:hover {
+  background-color: #619b0f;
+  color: #fff;
+  font-family: 'Oswald', sans-serif;
+  border-radius: 1.5em;
+  padding: 0.5em 3em;
+  transform: scale(0.9);
+}

@@ -33,6 +33,8 @@ Critérios de aceitação:
 
 ### História de usuário 2 - Garçom/Garçonete deve poder anotar o seu pedido.
 
+![GIF-Historia1](https://github.com/alencartha/SAP005-burger-queen/blob/feature/Gi/src/gifs/GIF-Historia1.gif)
+
 "Eu como garçom/garçonete quero poder anotar o meu pedido saber o valor de cada produto e poder enviar o pedido para a cozinha para ser preparado."
 
 Critérios de aceitação:
@@ -44,6 +46,7 @@ Critérios de aceitação:
 - Enviar o pedido para a cozinha (guardar em algum banco de dados).
 - Funcionar bem e se adequar a um tablet.
 
+![GIF-Historia2](https://github.com/alencartha/SAP005-burger-queen/blob/feature/Gi/src/gifs/GIF-Historia2.gif)
 
 ### História de usuário 3 - Chefe de cozinha deve ver os pedidos.
 
@@ -54,6 +57,7 @@ Critérios de aceitação:
 - Marcar os pedidos que foram preparados e estão prontos para serem servidos.
 - Ver o tempo que levou para preparar o pedido desde que chegou, até ser marcado como concluído.
 
+![GIF-Historia3](https://github.com/alencartha/SAP005-burger-queen/blob/feature/Gi/src/gifs/GIF-Historia3.gif)
 
 ### História de usuário 4 - Garçom/Garçonete deve ver os pedidos prontos para servir.
 
@@ -65,12 +69,9 @@ Critérios de aceitação:
 - Definição de pronto
 - Os dados devem ser mantidos intactos, mesmo depois que um pedido foi terminado. Tudo isso para poder ter estatísticas no futuro.
 
-## 3. Protótipo
+![GIF-Historia](https://github.com/alencartha/SAP005-burger-queen/blob/feature/Gi/src/gifs/GIF-Historia4.gif)
 
-![Protótipo](https://www.imagemhost.com.br/images/2021/03/05/prototipo.jpg)
-
-
-## 4. Tecnologias Utilizadas:
+## 3. Tecnologias Utilizadas:
 
 #### Framework / biblioteca:
 - React.

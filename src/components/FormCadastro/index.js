@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
+import './FormCadastro.css';
 
 const FormCadastro = () => {
   const [userInfo, setUser] = useState({ restaurant: 'Burger Beef' });
