@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import IconOrder from '../../assets/order.png';
-import '../../Styles/PedidosAFazer.css';
+import './PedidosAFazer.css';
 import HeaderMain from '../../components/HeaderMain/index.js';
-import ListaPedidosPendentes from '../../components/ListaPedidosPendentes/index.js';
+import ListaPedidosPendentes from '../../components/ListaPedidosPendentes/index';
 
 function PedidosAFazer() {
   return (

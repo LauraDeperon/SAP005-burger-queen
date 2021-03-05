@@ -1,0 +1,29 @@
+.btn-delete {
+  background-color: #000;
+  cursor: pointer;
+  border-radius: 2em;
+  padding: 0.2em;
+  border: none;
+  outline: none;
+  transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+}
+
+.btn-delete:hover {
+  background-color: rgba(0, 0, 0, 0.651);
+  transform: scale(0.9);
+}
+
+.icon-trash {
+  width: 2em;
+  height: 2em;
+}
+
+.icon-trash:hover {
+  opacity: 0.8;
+}
+
+.scroll {
+  overflow-y: scroll;
+  height: 5.7em;
+}

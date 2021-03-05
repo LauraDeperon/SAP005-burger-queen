@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import IconOrder from '../../assets/order.png';
 import HeaderMain from '../../components/HeaderMain/index.js';
-import '../../Styles/PedidosProntos.css';
+import './PedidosProntos.css';
 import ListaPedidosProntos from '../../components/ListaPedidosProntos/index.js';
 
 function PedidosProntos() {

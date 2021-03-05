@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import HeaderMain from '../../components/HeaderMain/index.js';
 import IconOrder from '../../assets/order.png';
 import CardapioCafeManha from '../../components/CardapioCafeManha/index';
-import '../../Styles/AnotarPedido.css';
+import './AnotarPedido.css';
 
 function AnotarPedidos() {
   return (

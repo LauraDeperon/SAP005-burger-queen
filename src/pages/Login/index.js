@@ -1,5 +1,5 @@
 import { Link, useHistory } from 'react-router-dom';
-import '../../Styles/Login.css';
+import './Login.css';
 import React, { useState } from 'react';
 import Footer from '../../components/Footer/index.js';
 import Header from '../../components/HeaderLogin/index.js';
