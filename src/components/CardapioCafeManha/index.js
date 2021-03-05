@@ -1,4 +1,4 @@
-import '../../Styles/CardapioCafeDaManha.css';
+import './CardapioCafeDaManha.css';
 import Trash from '../../assets/trash.png';
 import Check from '../../assets/check.png';
 import React, { useEffect, useState } from 'react';

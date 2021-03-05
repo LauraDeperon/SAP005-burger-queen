@@ -2,7 +2,7 @@ import { useHistory } from 'react-router-dom';
 import React from 'react';
 import Logo from '../../assets/Logo_Burger-Beef .png';
 import Logout from '../../assets/exit.png';
-import '../../Styles/HeaderMain.css';
+import './HeaderMain.css';
 
 function HeaderMain() {
   const history = useHistory();

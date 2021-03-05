@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import IconRefresh from '../../assets/atualizar.png';
-import '../../Styles/ListaPedidosPendentes.css';
+import './ListaPedidosPendentes.css';
 
 function ListaPedidosPendentes() {
   const tokenUser = localStorage.getItem('token');
