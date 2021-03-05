@@ -5,8 +5,8 @@
 
 * [1. Introdução](#1-Introdução)
 * [2. Processo de Desenvolvimento da Aplicação](#2-processo-de-desenvolvimento-da-aplicação)
-* [3. Tecnologias Utilizadas](#3-tecnologias-utilizadas-para-desenvolvimento)
-* [4. Desenvolvedoras](#desenvolvedoras)
+* [3. Tecnologias Utilizadas](#3-tecnologias-utilizadas)
+* [4. Desenvolvedoras](#4-desenvolvedoras)
 
 ***
 
