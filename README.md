@@ -5,8 +5,9 @@
 
 * [1. Introdução](#1-Introdução)
 * [2. Processo de Desenvolvimento da Aplicação](#2-processo-de-desenvolvimento-da-aplicação)
-* [3. Tecnologias Utilizadas](#3-tecnologias-utilizadas)
-* [4. Desenvolvedoras](#4-desenvolvedoras)
+* [3. Protótipo](#3-protótipo)
+* [4. Tecnologias Utilizadas](#4-tecnologias-utilizadas)
+* [5. Desenvolvedoras](#5-desenvolvedoras)
 
 ***
 
@@ -18,6 +19,7 @@ O Burger Beef é um projeto 100% por demanda. Neste projeto solucionamos o segui
 
 O ponto de partida para desenvolvermos o Burger Beef foram as Histórias de Usuário que irão utilizar a aplicação. Levando em consideração todo o fluxo dos atores envolvidos no processo, elaboramos o planejamento no Trello e, tendo como base a Metodologia Ágil (Scrum), organizamos as entregas de cada História de Usuário por meio de Sprints. São Histórias do Usuário: 
 
+
 ### História de usuário 1 - Usuário deve ter seu perfil (login/senha) para acessar o sistema.
 
 "Eu como funcionário do restaurante quero entrar na plataforma e ver apenas a tela importante para o meu trabalho."
@@ -27,6 +29,7 @@ Critérios de aceitação:
 - Criar login e senha.
 - Registar tipo de usuário (cozinha / salão), login e senha.
 - Entrar na tela correta para cada usuário.
+
 
 ### História de usuário 2 - Garçom/Garçonete deve poder anotar o seu pedido.
 
@@ -41,6 +44,7 @@ Critérios de aceitação:
 - Enviar o pedido para a cozinha (guardar em algum banco de dados).
 - Funcionar bem e se adequar a um tablet.
 
+
 ### História de usuário 3 - Chefe de cozinha deve ver os pedidos.
 
 "Eu como chefe de cozinha quero ver os pedidos dos clientes em ordem, poder marcar que estão prontos e poder notificar os garçons/garçonetes que o pedido está pronto para ser entregue ao cliente."
@@ -49,6 +53,7 @@ Critérios de aceitação:
 - Ver os pedidos à medida em que são feitos.
 - Marcar os pedidos que foram preparados e estão prontos para serem servidos.
 - Ver o tempo que levou para preparar o pedido desde que chegou, até ser marcado como concluído.
+
 
 ### História de usuário 4 - Garçom/Garçonete deve ver os pedidos prontos para servir.
 
@@ -60,7 +65,12 @@ Critérios de aceitação:
 - Definição de pronto
 - Os dados devem ser mantidos intactos, mesmo depois que um pedido foi terminado. Tudo isso para poder ter estatísticas no futuro.
 
-## 3. Tecnologias Utilizadas:
+## 3. Protótipo
+
+![Protótipo](https://www.imagemhost.com.br/images/2021/03/05/prototipo.jpg)
+
+
+## 4. Tecnologias Utilizadas:
 
 #### Framework / biblioteca:
 - React.
@@ -85,7 +95,7 @@ Critérios de aceitação:
 #### Deploy:
 - Vercel.
 
-## 4. Desenvolvedoras:
+## 5. Desenvolvedoras:
 
 - [Laura Deperon](https://github.com/LauraDeperon)
 - [Thaís Alencar](https://github.com/alencartha)
