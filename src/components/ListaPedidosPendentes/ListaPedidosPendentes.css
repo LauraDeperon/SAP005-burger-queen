@@ -72,8 +72,9 @@
 .details-status {
   display: flex;
   justify-content: space-between;
-  width: 20%;
+  width: 30%;
   margin-top: -1.2em;
+  text-transform: uppercase;
 }
 
 .container-order {

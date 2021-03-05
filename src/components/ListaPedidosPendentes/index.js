@@ -86,7 +86,7 @@ function ListaPedidosPendentes() {
               <p>Cliente: {pedido.client_name}</p>
             </div>
             <div className="details-status">
-              <h2>STATUS: </h2>
+              <h2>Status:</h2>
               <h2>
                 {pedido.status
                   .replace('pending', 'Pendente')

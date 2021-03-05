@@ -1,6 +1,7 @@
-import './ListaPedidosProntos.css';
+import '../ListaPedidosPendentes/ListaPedidosPendentes.css';
 import React, { useEffect, useState } from 'react';
 import IconRefresh from '../../assets/atualizar.png';
+import '../ListaPedidos/ListaPedidos.css';
 
 const ListaPedidosProntos = () => {
   const tokenUser = localStorage.getItem('token');
@@ -66,10 +67,10 @@ const ListaPedidosProntos = () => {
               <p>Cliente: {pedido.client_name}</p>
             </div>
             <div className="details-status">
-              <h2>Tempo Preparo: </h2>
+              <h2>Preparo: </h2>
               <h2>{minutes} min</h2>
             </div>
-            <section className="container-order">
+            <section className="container-order scroll">
               {pedido.Products.map((itens, index) => (
                 <div className="details-order-pending" key={index}>
                   <p>
@@ -97,47 +98,3 @@ const ListaPedidosProntos = () => {
 };
 
 export default ListaPedidosProntos;
-
-{
-  /* <div>
-      {PedidosProntos.map((pedido) => {
-        const dataUpdated = new Date(pedido.updatedAt);
-        const dataCreated = new Date(pedido.createdAt);
-        const diferença = Math.abs(dataUpdated) - dataCreated;
-        const minutes = Math.floor(diferença / 1000 / 60);
-        return (
-          <table key={pedido.id}>
-            <tbody>
-              <tr>
-                <th>Pedido nº {pedido.id}</th>
-                <th>Cliente: {pedido.client_name}</th>
-                <th>Mesa: {pedido.table}</th>
-                <th>Tempo: {minutes} min</th>
-              </tr>
-              <tr>
-                <th>Qtde</th>
-                <th>Ítem</th>
-                <th>Complemento</th>
-                <th>Adicionais</th>
-              </tr>
-              {pedido.Products.map((itens, index) => (
-                <tr key={index}>
-                  <td>{itens.qtd}</td>
-                  <td>{itens.name}</td>
-                  <td>{itens.flavor === 'null' ? '' : itens.flavor}</td>
-                  <td>{itens.complement === 'null' ? '' : itens.complement}</td>
-                </tr>
-              ))}
-              <tr>
-                <th>
-                  <button onClick={() => handleEntregar(pedido)}>
-                    ENTREGAR
-                  </button>
-                </th>
-              </tr>
-            </tbody>
-          </table>
-        );
-      })}
-    </div> */
-}

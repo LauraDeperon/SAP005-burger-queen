@@ -48,6 +48,9 @@ const CardapioCafeManha = () => {
   const handleAdicionar = (produto) => {
     setResumoPedido([...resumoPedido, produto]);
     setPrecosProdutos([...precosProdutos, produto.price]);
+  };
+
+  useEffect(() => {
     const produtoApi = resumoPedido.map((produto) => {
       return {
         id: produto.id,
@@ -69,7 +72,7 @@ const CardapioCafeManha = () => {
       });
     }
     setOrder({ ...order, products: arrayProdutos });
-  };
+  }, [resumoPedido]);
 
   useEffect(() => {
     Somar();
@@ -86,6 +89,8 @@ const CardapioCafeManha = () => {
   };
 
   const handleSubmit = () => {
+    // eslint-disable-next-line no-console
+    console.log(resumoPedido);
     fetch('https://lab-api-bq.herokuapp.com/orders', {
       method: 'POST',
       headers: {
