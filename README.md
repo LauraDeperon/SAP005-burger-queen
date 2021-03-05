@@ -1,70 +1,101 @@
-# Getting Started with Create React App
+# Burger Beef
+![Logo](https://www.imagemhost.com.br/images/2021/03/05/Design-sem-nome-81.th.png)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Índice
 
-## Available Scripts
+* [1. Introdução](#1-Introdução)
+* [2. Processo de Desenvolvimento da Aplicação](#2-processo-de-desenvolvimento-da-aplicação)
+* [3. Tecnologias Utilizadas](#3-tecnologias-utilizadas-para-desenvolvimento)
+* [4. Desenvolvedoras](#desenvolvedoras)
 
-In the project directory, you can run:
+***
 
-### `npm start`
+## 1. Introdução:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+O Burger Beef é um projeto 100% por demanda. Neste projeto solucionamos o seguinte problema: um pequeno restaurante de hambúrgueres, que está crescendo, necessita uma interface em que se possa realizar pedidos utilizando um tablet, e enviá-los para a cozinha para que sejam preparados de forma ordenada e eficiente.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## 2. Processo de Desenvolvimento da Aplicação:
 
-### `npm test`
+O ponto de partida para desenvolvermos o Burger Beef foram as Histórias de Usuário que irão utilizar a aplicação. Levando em consideração todo o fluxo dos atores envolvidos no processo, elaboramos o planejamento no Trello e tendo como base a Metodologia Ágil (Scrum). Nesse sentido, organizamos as entregas de cada História de Usuário por meio de Sprints. São Histórias do Usuário: 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### História de usuário 1 - Usuário deve ter seu perfil (login/senha) para acessar o sistema.
 
-### `npm run build`
+"Eu como funcionário do restaurante quero entrar na plataforma e ver apenas a tela importante para o meu trabalho."
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Critérios de aceitação:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Criar login e senha.
+- Registar tipo de usuário (cozinha / salão), login e senha.
+- Entrar na tela correta para cada usuário.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### História de usuário 2 - Garçom/Garçonete deve poder anotar o seu pedido.
 
-### `npm run eject`
+"Eu como garçom/garçonete quero poder anotar o meu pedido saber o valor de cada produto e poder enviar o pedido para a cozinha para ser preparado."
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Critérios de aceitação:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Anotar o nome e mesa.
+- Adicionar produtos aos pedidos.
+- Excluir produtos.
+- Ver resumo e o total da compra.
+- Enviar o pedido para a cozinha (guardar em algum banco de dados).
+- Funcionar bem e se adequar a um tablet.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### História de usuário 3 - Chefe de cozinha deve ver os pedidos.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+"Eu como chefe de cozinha quero ver os pedidos dos clientes em ordem, poder marcar que estão prontos e poder notificar os garçons/garçonetes que o pedido está pronto para ser entregue ao cliente."
 
-## Learn More
+Critérios de aceitação:
+- Ver os pedidos à medida em que são feitos.
+- Marcar os pedidos que foram preparados e estão prontos para serem servidos.
+- Ver o tempo que levou para preparar o pedido desde que chegou, até ser marcado como concluído.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### História de usuário 4 - Garçom/Garçonete deve ver os pedidos prontos para servir.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+"Eu como garçom/garçonete quero ver os pedidos que estão prontos para entregá-los rapidamente aos clientes."
 
-### Code Splitting
+Critérios de aceitação:
+- Ver a lista de pedidos prontos para servir.
+- Marque os pedidos que foram entregues.
+- Definição de pronto
+- Os dados devem ser mantidos intactos, mesmo depois que um pedido foi terminado. Tudo isso para poder ter estatísticas no futuro.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## 3. Tecnologias Utilizadas:
 
-### Analyzing the Bundle Size
+#### Framework / biblioteca:
+- React.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+#### React Hooks:
+- React Hooks.
 
-### Making a Progressive Web App
+#### Ferramentas:
+- Babel;
+- webpack;
+- React Router;
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+#### Requisições com React:
+- React + Fetch
 
-### Advanced Configuration
+#### Testando requisições:
+- Postman.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+#### Configuração de ESLint:
+- ESLint + Prettier.
 
-### Deployment
+#### Deploy:
+- Vercel.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## 4. Desenvolvedoras:
 
-### `npm run build` fails to minify
+- [Laura Deperon](https://github.com/LauraDeperon)
+- [Thaís Alencar](https://github.com/alencartha)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+
+
+
+
+
+
+
