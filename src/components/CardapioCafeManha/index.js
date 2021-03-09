@@ -89,8 +89,6 @@ const CardapioCafeManha = () => {
   };
 
   const handleSubmit = () => {
-    // eslint-disable-next-line no-console
-    console.log(resumoPedido);
     fetch('https://lab-api-bq.herokuapp.com/orders', {
       method: 'POST',
       headers: {
