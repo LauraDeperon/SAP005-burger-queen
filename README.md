@@ -30,10 +30,10 @@ Critérios de aceitação:
 - Registar tipo de usuário (cozinha / salão), login e senha.
 - Entrar na tela correta para cada usuário.
 
+![GIF-Historia1](https://github.com/alencartha/SAP005-burger-queen/blob/feature/Gi/src/gifs/GIF-Historia1.gif)
 
 ### História de usuário 2 - Garçom/Garçonete deve poder anotar o seu pedido.
 
-![GIF-Historia1](https://github.com/alencartha/SAP005-burger-queen/blob/feature/Gi/src/gifs/GIF-Historia1.gif)
 
 "Eu como garçom/garçonete quero poder anotar o meu pedido saber o valor de cada produto e poder enviar o pedido para a cozinha para ser preparado."
 
