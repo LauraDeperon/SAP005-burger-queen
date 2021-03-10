@@ -17,7 +17,7 @@ O Burger Beef é um projeto 100% por demanda. Neste projeto solucionamos o segui
 
 ## 2. Processo de Desenvolvimento da Aplicação:
 
-O ponto de partida para desenvolvermos o Burger Beef foram as Histórias de Usuário que irão utilizar a aplicação. Levando em consideração todo o fluxo dos atores envolvidos no processo, elaboramos o planejamento no Trello e, tendo como base a Metodologia Ágil (Scrum), organizamos as entregas de cada História de Usuário por meio de Sprints. São Histórias do Usuário: 
+O ponto de partida para desenvolvermos o Burger Beef foram as Histórias de Usuário que irão utilizar a aplicação. Levando em consideração todo o fluxo dos atores envolvidos no processo, elaboramos o planejamento no Trello e, tendo como base a Metodologia Ágil (Scrum), desenvolvemos o protótipo da aplicação e organizamos as entregas de cada História de Usuário por meio de Sprints. São Histórias do Usuário: 
 
 
 ### História de usuário 1 - Usuário deve ter seu perfil (login/senha) para acessar o sistema.
@@ -71,7 +71,13 @@ Critérios de aceitação:
 
 ![GIF-Historia](https://github.com/alencartha/SAP005-burger-queen/blob/feature/Gi/src/gifs/GIF-Historia4.gif)
 
-## 3. Tecnologias Utilizadas:
+## 3. Protótipo:
+![Prototipo](https://github.com/alencartha/SAP005-burger-queen/blob/main/src/assets/prot%C3%B3tipo.jpg?raw=true)
+
+## 4. Tecnologias Utilizadas:
+
+###Protótipo
+- Canva.
 
 #### Framework / biblioteca:
 - React.
