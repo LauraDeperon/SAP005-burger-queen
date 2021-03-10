@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
-import Modal from '../ModalCadastro/index.js';
+import { Link } from 'react-router-dom';
+import ModalSuccess from '../ModalSucess/index.js';
+import ModalError from '../ModalError/index.js';
 import './FormCadastro.css';
 
 const FormCadastro = () => {
   const [userInfo, setUser] = useState({ restaurant: 'Burger Beef' });
-  const [modalIsVisible, setModalIsVisible] = useState(false);
+  const [modalSucessIsVisible, setModalSucessIsVisible] = useState(false);
+  const [modalErrorIsVisible, setModalErrorIsVisible] = useState(false);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -13,19 +16,29 @@ const FormCadastro = () => {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(userInfo),
-    })
-      .then((response) => {
-        response.json().then(() => {});
-        setModalIsVisible(true);
-      })
-      .catch((error) => {
-        alert(error.message);
+    }).then((response) => {
+      response.json().then((data) => {
+        if (data.code === 400) {
+          setModalErrorIsVisible(true);
+        } else {
+          setModalSucessIsVisible(true);
+        }
       });
+    });
   };
 
   return (
     <>
-      {modalIsVisible ? <Modal /> : null}
+      {modalSucessIsVisible ? (
+        <ModalSuccess onClose={() => setModalSucessIsVisible(false)}>
+          <h3>Usuário Criado com Sucesso!</h3>
+        </ModalSuccess>
+      ) : null}
+      {modalErrorIsVisible ? (
+        <ModalError onClose={() => setModalErrorIsVisible(false)}>
+          <h3>Preencha todos os campos!</h3>
+        </ModalError>
+      ) : null}
       <section className="form-cadastro">
         <div className="field-cadastro">
           <label>
@@ -111,6 +124,9 @@ const FormCadastro = () => {
           CADASTRAR
         </button>
       </section>
+      <h3>
+        Se já possui cadastro, clique <Link to="/">AQUI</Link> para fazer Login!
+      </h3>
     </>
   );
 };

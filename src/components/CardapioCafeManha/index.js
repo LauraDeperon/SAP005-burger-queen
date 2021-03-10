@@ -1,4 +1,6 @@
 import './CardapioCafeDaManha.css';
+import ModalError from '../ModalError/index.js';
+import ModalSucess from '../ModalSucess/index.js';
 import Trash from '../../assets/trash.png';
 import Check from '../../assets/check.png';
 import React, { useEffect, useState } from 'react';
@@ -14,6 +16,8 @@ const CardapioCafeManha = () => {
   const [produtoExcluído, setProdutoExcluído] = useState([]);
   const [precoTotal, setPrecoTotal] = useState([0]);
   const [precosProdutos, setPrecosProdutos] = useState([0]);
+  const [modalSucessIsVisible, setModalSucessIsVisible] = useState(false);
+  const [modalErrorIsVisible, setModalErrorIsVisible] = useState(false);
 
   useEffect(() => {
     fetch('https://lab-api-bq.herokuapp.com/products', {
@@ -96,21 +100,21 @@ const CardapioCafeManha = () => {
         Authorization: `${tokenUser}`,
       },
       body: JSON.stringify(order),
-    })
-      .then((response) => {
-        response.json().then(() => {
+    }).then((response) => {
+      response.json().then((data) => {
+        if (data.code === 400) {
+          setModalErrorIsVisible(true);
+        } else {
           setOrder({});
           setResumoPedido([]);
           setPrecoTotal([0]);
           setPrecosProdutos([0]);
           setProdutoExcluído([]);
+          setModalSucessIsVisible(true);
           clearInput();
-          alert('Pedido Criado com Sucesso!');
-        });
-      })
-      .catch(() => {
-        alert('Preencha todos os campos!');
+        }
       });
+    });
   };
 
   const clearInput = () => {
@@ -120,6 +124,16 @@ const CardapioCafeManha = () => {
 
   return (
     <div>
+      {modalSucessIsVisible ? (
+        <ModalSucess onClose={() => setModalSucessIsVisible(false)}>
+          <h3>Pedido Criado com Sucesso!</h3>
+        </ModalSucess>
+      ) : null}
+      {modalErrorIsVisible ? (
+        <ModalError onClose={() => setModalErrorIsVisible(false)}>
+          <h3>Preencha todos os campos!</h3>
+        </ModalError>
+      ) : null}
       <section className="fixed-container">
         <section className="order-info">
           <div className="info-client">
