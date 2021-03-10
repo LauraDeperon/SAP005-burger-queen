@@ -197,16 +197,14 @@ const CardapioCafeManha = () => {
 
       <section className="container-menu">
         {CardapioCafe.map((produto) => (
-          <div className="itens-menu" key={produto.id}>
+          <div
+            className="itens-menu"
+            key={produto.id}
+            onClick={() => handleAdicionar(produto)}
+          >
             <h3>{produto.name}</h3>
             <img src={produto.image} />
             <p>R$ {produto.price},00</p>
-            <button
-              className="btn-add-item"
-              onClick={() => handleAdicionar(produto)}
-            >
-              +
-            </button>
           </div>
         ))}
       </section>
@@ -215,18 +213,16 @@ const CardapioCafeManha = () => {
 
       <section className="container-menu">
         {hamburgueres.map((produto) => (
-          <div className="itens-menu" key={produto.id}>
+          <div
+            className="itens-menu"
+            key={produto.id}
+            onClick={() => handleAdicionar(produto)}
+          >
             <h3>{produto.name}</h3>
             <img src={produto.image} />
             <p>{produto.flavor}</p>
             <p>{produto.complement === 'null' ? '' : produto.complement}</p>
             <p>R$ {produto.price},00</p>
-            <button
-              className="btn-add-item"
-              onClick={() => handleAdicionar(produto)}
-            >
-              +
-            </button>
           </div>
         ))}
       </section>
@@ -235,16 +231,14 @@ const CardapioCafeManha = () => {
 
       <section className="container-menu">
         {acompanhamentos.map((produto) => (
-          <div className="itens-menu" key={produto.id}>
+          <div
+            className="itens-menu"
+            key={produto.id}
+            onClick={() => handleAdicionar(produto)}
+          >
             <h3>{produto.name}</h3>
             <img src={produto.image} />
             <p>R$ {produto.price},00</p>
-            <button
-              className="btn-add-item"
-              onClick={() => handleAdicionar(produto)}
-            >
-              +
-            </button>
           </div>
         ))}
       </section>
@@ -253,16 +247,14 @@ const CardapioCafeManha = () => {
 
       <section className="container-menu container-bebidas">
         {bebidas.map((produto) => (
-          <div className="itens-menu" key={produto.id}>
+          <div
+            className="itens-menu"
+            key={produto.id}
+            onClick={() => handleAdicionar(produto)}
+          >
             <h3>{produto.name}</h3>
             <img src={produto.image} />
             <p>R$ {produto.price},00</p>
-            <button
-              className="btn-add-item"
-              onClick={() => handleAdicionar(produto)}
-            >
-              +
-            </button>
           </div>
         ))}
       </section>
