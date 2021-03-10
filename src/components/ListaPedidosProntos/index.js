@@ -25,6 +25,10 @@ const ListaPedidosProntos = () => {
       });
   };
 
+  const handleAtualizar = () => {
+    listaPedidos();
+  };
+
   useEffect(() => {
     listaPedidos();
   }, []);

@@ -8,6 +8,7 @@ const FormCadastro = () => {
   const [userInfo, setUser] = useState({ restaurant: 'Burger Beef' });
   const [modalSucessIsVisible, setModalSucessIsVisible] = useState(false);
   const [modalErrorIsVisible, setModalErrorIsVisible] = useState(false);
+  const [modalErrorIsVisible403, setModalErrorIsVisible403] = useState(false);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -20,6 +21,8 @@ const FormCadastro = () => {
       response.json().then((data) => {
         if (data.code === 400) {
           setModalErrorIsVisible(true);
+        } else if (data.code === 403) {
+          setModalErrorIsVisible403(true);
         } else {
           setModalSucessIsVisible(true);
         }
@@ -37,6 +40,11 @@ const FormCadastro = () => {
       {modalErrorIsVisible ? (
         <ModalError onClose={() => setModalErrorIsVisible(false)}>
           <h3>Preencha todos os campos!</h3>
+        </ModalError>
+      ) : null}
+      {modalErrorIsVisible403 ? (
+        <ModalError onClose={() => setModalErrorIsVisible403(false)}>
+          <h3>E-mail já cadastrado!</h3>
         </ModalError>
       ) : null}
       <section className="form-cadastro">

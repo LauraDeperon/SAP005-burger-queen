@@ -22,11 +22,11 @@ const Routes = () => {
   return (
     <Switch>
       <Route path="/" component={Login} exact />
-      <Route path="/Cadastro" component={Cadastro} exact />
-      <PrivateRoute path="/AnotarPedidos" component={AnotarPedidos} exact />
-      <PrivateRoute path="/PedidosAFazer" component={PedidosAFazer} exact />
+      <Route path="/cadastro" component={Cadastro} exact />
+      <PrivateRoute path="/anotarpedidos" component={AnotarPedidos} exact />
+      <PrivateRoute path="/pedidosafazer" component={PedidosAFazer} exact />
       <PrivateRoute
-        path="/HistoricoPedidos"
+        path="/historicopedidos"
         component={HistoricoPedidos}
         exact
       />

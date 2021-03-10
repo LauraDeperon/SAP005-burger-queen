@@ -83,7 +83,7 @@ const CardapioCafeManha = () => {
   }, [precosProdutos]);
 
   const handleExcluir = (produto) => {
-    setPrecoTotal(precosProdutos.splice(resumoPedido.indexOf(produto), 1));
+    setPrecoTotal(precosProdutos.splice(resumoPedido.indexOf(produto) + 1, 1));
     setProdutoExcluído(resumoPedido.splice(resumoPedido.indexOf(produto), 1));
     Somar();
   };
@@ -131,7 +131,7 @@ const CardapioCafeManha = () => {
       ) : null}
       {modalErrorIsVisible ? (
         <ModalError onClose={() => setModalErrorIsVisible(false)}>
-          <h3>Preencha todos os campos!</h3>
+          <h3>Preencha Todos os Campos!</h3>
         </ModalError>
       ) : null}
       <section className="fixed-container">
