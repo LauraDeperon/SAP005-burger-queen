@@ -76,7 +76,7 @@ Critérios de aceitação:
 
 ## 4. Tecnologias Utilizadas:
 
-###Protótipo
+### Protótipo
 - Canva.
 
 #### Framework / biblioteca:
