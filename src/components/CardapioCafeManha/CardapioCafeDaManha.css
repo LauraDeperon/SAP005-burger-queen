@@ -32,7 +32,7 @@ h2 {
   display: flex;
   padding: 0.5em;
   flex-direction: column;
-  height: 5em;
+  height: 7em;
 }
 
 /* ------------------INFORMAÇÕES CLIENTE------------------- */
@@ -72,14 +72,14 @@ h2 {
   flex-direction: column;
   flex-wrap: nowrap;
   align-items: center;
-  width: 80%;
+  width: 90%;
   margin: 0 auto;
 }
 
 .container-resum > h2 {
   font-family: 'Oswald', sans-serif;
   color: #000;
-  font-size: 15pt;
+  font-size: 20pt;
   font-weight: 800;
   margin-top: 0em;
 }
@@ -100,7 +100,7 @@ h2 {
   background-color: #f2cc91;
   border-radius: 0.2em;
   margin: 0.1em;
-  width: 18em;
+  width: 20em;
   justify-content: space-between;
   padding: 0 1em;
 }
@@ -219,7 +219,7 @@ h2 {
   border-color: #e5a33e;
   border-radius: 0.5em;
   width: 4em;
-  height: 9em;
+  height: 7.5em;
   margin: 0.05em;
 }
 
