@@ -1,15 +1,15 @@
 import { Link, useHistory } from 'react-router-dom';
 import './Login.css';
+import ModalError from '../../components/ModalError/index.js';
 import React, { useState } from 'react';
 import Footer from '../../components/Footer/index.js';
 import Header from '../../components/HeaderLogin/index.js';
 import IconUser from '../../assets/user.png';
 import IconPassword from '../../assets/padlock.png';
-// import ModalLogin from '../../components/Modals/ModalLogin/index.js';
 
 function Login() {
   const history = useHistory();
-
+  const [modalErrorIsVisible, setModalErrorIsVisible] = useState(false);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -38,9 +38,8 @@ function Login() {
           localStorage.setItem('name', name);
           localStorage.setItem('role', role);
           history.push('/PedidosAFazer');
-        } else {
-          // ModalLogin(data.code)
-          alert(`Preencha todos os campos. Erro: ${data.code}`);
+        } else if (data.code === 400) {
+          setModalErrorIsVisible(true);
         }
       });
     });
@@ -49,6 +48,11 @@ function Login() {
   return (
     <section className="page-login">
       <Header />
+      {modalErrorIsVisible ? (
+        <ModalError onClose={() => setModalErrorIsVisible(false)}>
+          <h3>Preencha todos os campos!</h3>
+        </ModalError>
+      ) : null}
       <form className="form-login">
         <div className="field-login">
           <p>E-mail: </p>
