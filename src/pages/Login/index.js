@@ -50,7 +50,7 @@ function Login() {
       <Header />
       {modalErrorIsVisible ? (
         <ModalError onClose={() => setModalErrorIsVisible(false)}>
-          <h3>Preencha todos os campos!</h3>
+          <h3>E-mail e/ou senha inválidos!</h3>
         </ModalError>
       ) : null}
       <form className="form-login">
